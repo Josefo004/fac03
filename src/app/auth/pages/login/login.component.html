@@ -1,1 +1,54 @@
-<p>login works!</p>
+<div class="hold-transition login-page">
+  <div class="login-box">
+    <div class="login-logo">
+      <a href="../../index2.html"><b></b>SVF</a>
+    </div>
+    <!-- /.login-logo -->
+    <div class="card">
+      <div class="card-body login-card-body">
+        <p class="login-box-msg">Ingrese sus datos de Acceso</p>
+        <form  (ngSubmit)="login()" [formGroup]="loginForm">
+          <div class="input-group mb-3">
+            <input type="email" class="form-control" formControlName="email" placeholder="Correo electronico" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required>
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <span class="fas fa-envelope"></span>
+              </div>
+            </div>
+          </div>
+          <div class="input-group mb-3">
+            <input type="password" class="form-control" formControlName="password" placeholder="Contraseña" required >
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <span class="fas fa-lock"></span>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-8">
+              
+            </div>
+            <!-- /.col -->
+            <div class="col-4">
+              <button type="submit" class="btn btn-primary btn-block" [disabled]="loginForm.invalid">Ingresar</button>
+            </div>
+            <!-- /.col -->
+          </div>
+        </form>
+        <p class="mb-0">
+          <a routerLink="/auth/register" class="text-center">Registrarse</a>
+        </p>
+      </div>
+      <div *ngIf="hayError">
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+          <strong>ERROR!!</strong>Usuario no encontrado.
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      </div>
+      <!-- /.login-card-body -->
+    </div>
+  </div>
+  <!-- /.login-box -->
+</div>

@@ -5,6 +5,7 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs.component';
 import { ErrorPageComponent } from './error-page/error-page.component';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -17,9 +18,14 @@ import { ErrorPageComponent } from './error-page/error-page.component';
     ErrorPageComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule
   ],
   exports:[
+    SidebarComponent,
+    HeaderComponent,
+    FooterComponent,
+    BreadcrumbsComponent,
     ErrorPageComponent
   ]
 })

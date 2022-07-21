@@ -11,10 +11,13 @@ const routes:Routes = [
     path: 'factura', loadChildren: ()=>import('./factura/factura.module').then(m=>m.FacturaModule)
   },
   {
+    path: 'admfactura', loadChildren: ()=>import('./admfactura/admfactura.module').then(m=>m.AdmfacturaModule)
+  },
+  {
     path: '404', component: ErrorPageComponent
   },
   {
-    path: '**', redirectTo: '404'
+    path: '**', redirectTo: 'auth'
   }
 ];
 
