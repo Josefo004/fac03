@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { TLogin, TUsuario2 } from 'src/app/interfaces/interfaces';
+import { TLogin, TUsuario, TUsuario2 } from 'src/app/interfaces/interfaces';
 import { tap } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 
@@ -29,5 +29,10 @@ export class AuthService {
   logout(){
     this._usuario = undefined;
     localStorage.removeItem('token');
+  }
+
+  registrarUsuario(nu:TUsuario){
+    let urlPOSTusuario = `${this.apiUrl}/usuarios`;
+    return this.http.post(urlPOSTusuario, nu);
   }
 }

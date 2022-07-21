@@ -11,10 +11,10 @@ const routes: Routes = [
     path:'',
     component: HomeComponent, 
     children:[
-      {path:'sucursal', component:SucursalComponent},
-      {path:'puntoventa', component:PuntoVentaComponent},
-      {path:'producto', component:ProductoComponent},
-      {path:'unidadmendida', component:UnidadMedidaComponent},
+      {path:'sucursal', component:SucursalComponent, data:{titulo:'Sucursal'}},
+      {path:'puntoventa', component:PuntoVentaComponent, data:{titulo:'Punto de Venta'}},
+      {path:'producto', component:ProductoComponent, data:{titulo:'Productos'}},
+      {path:'unidadmendida', component:UnidadMedidaComponent, data:{titulo:'UnidadMedida'}},
       {path:'**', redirectTo:'sucursal'}
     ]
   }

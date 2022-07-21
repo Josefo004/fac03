@@ -9,8 +9,8 @@ const routes: Routes = [
     path: '',
     component: HomeComponent,
     children: [
-      {path: 'findfactura', component: FindFacturaComponent},
-      {path: 'factura', component: FacturaComponent},
+      {path: 'findfactura', component: FindFacturaComponent , data:{titulo:'Buscar Factura'}},
+      {path: 'factura', component: FacturaComponent, data:{titulo:'Hacer Factura'}},
       {path: '**', redirectTo: 'findfactura'}
     ]
   }

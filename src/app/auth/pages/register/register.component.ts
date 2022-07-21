@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { UntypedFormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { TUsuario } from 'src/app/interfaces/interfaces';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-register',
@@ -21,11 +23,29 @@ export class RegisterComponent implements OnInit {
   });
 
   constructor(private fb: UntypedFormBuilder,
-              private router: Router) { }
+              private router: Router,
+              private authservice: AuthService) { }
 
   ngOnInit(): void {
   }
 
-  onRegister(){}
+  onRegister(){
+    this.hayError = false;
+    console.log(this.registerForm.value);
+    const newuser : TUsuario = {
+      usuario : this.registerForm.value.email,
+      password : this.registerForm.value.password,
+      nombre : this.registerForm.value.name,
+      nivel : this.registerForm.value.nivel
+    }
+    console.log(newuser);
+    this.authservice.registrarUsuario(newuser)
+      .subscribe( resp => {
+        console.log(resp);
+        if (resp==null) {
+          this.router.navigate(['./auth/login']);
+        }
+      });
+  }
 
 }
