@@ -5,6 +5,8 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
+import { NgxPermissionsModule } from 'ngx-permissions';
+
 
 @NgModule({
   declarations: [
@@ -14,7 +16,8 @@ import { SharedModule } from './shared/shared.module';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    SharedModule
+    SharedModule,
+    NgxPermissionsModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
