@@ -14,6 +14,9 @@ const routes:Routes = [
     path: 'admfactura', loadChildren: ()=>import('./admfactura/admfactura.module').then(m=>m.AdmfacturaModule)
   },
   {
+    path: 'admusuario', loadChildren: ()=>import('./admuser/admuser.module').then(m=>m.AdmuserModule)
+  },
+  {
     path: '404', component: ErrorPageComponent
   },
   {
