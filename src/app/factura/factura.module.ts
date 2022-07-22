@@ -6,6 +6,7 @@ import { FacturaComponent } from './pages/factura/factura.component';
 import { FindFacturaComponent } from './pages/find-factura/find-factura.component';
 import { HomeComponent } from './pages/home/home.component';
 import { SharedModule } from '../shared/shared.module';
+import { NgxPermissionsModule } from 'ngx-permissions';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { SharedModule } from '../shared/shared.module';
   imports: [
     CommonModule,
     FacturaRoutingModule,
-    SharedModule
+    SharedModule,
+    NgxPermissionsModule
   ],
   exports:[HomeComponent]
 })

@@ -11,7 +11,7 @@ const routes: Routes = [
     data:{
       permissions:{
         only:['ADMIN'],
-        redirectTo: '404'
+        redirectTo: '403'
       }
     },
     children: [

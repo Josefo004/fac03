@@ -3,6 +3,7 @@ import { UntypedFormBuilder, Validators } from '@angular/forms';
 import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
 import { TLogin } from 'src/app/interfaces/interfaces';
+import { PermisosService } from '../../services/permisos.service';
 
 @Component({
   selector: 'app-login',
@@ -15,13 +16,14 @@ export class LoginComponent implements OnInit {
   hayError : boolean = false;
 
   loginForm = this.fb.group({
-    email: ['juan1577@hotmail.com', [Validators.required, Validators.email]],
-    password: ['654321',[Validators.required]],
+    email: ['juanco@gamail.com', [Validators.required, Validators.email]],
+    password: ['111111',[Validators.required]],
     remember:[false]
   });
 
   constructor(private fb: UntypedFormBuilder,
               private authservice: AuthService,
+              private nxpermisos: PermisosService,
               private router: Router) { }
 
   ngOnInit(): void {
@@ -37,7 +39,8 @@ export class LoginComponent implements OnInit {
     this.authservice.login(usulogin)
       .subscribe(resp => {
         if (resp.length>0) {
-          this.router.navigate(['./factura'])
+          this.router.navigate(['./factura']);
+          this.nxpermisos.leer_permisos(resp[0].id).subscribe();
         }else{this.hayError=true} 
         console.log(resp);
       })

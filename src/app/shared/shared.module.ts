@@ -6,6 +6,7 @@ import { FooterComponent } from './footer/footer.component';
 import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs.component';
 import { ErrorPageComponent } from './error-page/error-page.component';
 import { RouterModule } from '@angular/router';
+import { NgxPermissionsModule } from 'ngx-permissions';
 
 
 
@@ -19,7 +20,8 @@ import { RouterModule } from '@angular/router';
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    NgxPermissionsModule
   ],
   exports:[
     SidebarComponent,

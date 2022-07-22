@@ -20,6 +20,7 @@ import { NgxPermissionsModule } from 'ngx-permissions';
     NgxPermissionsModule.forRoot()
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  exports: [NgxPermissionsModule]
 })
 export class AppModule { }

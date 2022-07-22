@@ -14,7 +14,7 @@
         <img src="../assets/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
       </div>
       <div class="info">
-        <a class="d-block">Alexander Pierce</a>
+        <a class="d-block">{{ auth.nombre }}</a>
       </div>
     </div>
 
@@ -24,7 +24,7 @@
         <!-- Add icons to the links using the .nav-icon class
               with font-awesome or any other icon font library -->
         <li class="nav-item" *ngFor="let item of menuItems">
-          <a class="nav-link">
+          <a class="nav-link" *ngxPermissionsOnly="item.permisos">
             <i class="nav-icon fas fa-tachometer-alt"></i>
             <p>
               <strong>
@@ -36,7 +36,7 @@
           </a>
           <ul class="nav">
             <li class="nav-item" *ngFor="let subMenu of item.submenu">
-              <a [routerLink]=[subMenu.url] class="nav-link">
+              <a [routerLink]=[subMenu.url] *ngxPermissionsOnly="[subMenu.permisos]" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>{{subMenu.titulo}}</p>
               </a>
