@@ -1,22 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { NgxPermissionsGuard } from 'ngx-permissions';
-import { PermisosComponent } from './permisos/permisos.component';
+import { HomeComponent } from '../factura/pages/home/home.component';
 import { UsuarioComponent } from './usuario/usuario.component';
 
 const routes: Routes = [
   {
     path:'',
-    canActivate:[NgxPermissionsGuard],
-    data:{
-      permissions:{
-        only:['ADMIN'],
-        redirectTo: '403'
-      }
-    },
+    component: HomeComponent, 
     children: [
-      { path:'', component: UsuarioComponent },
-      { path:'permiso', component: PermisosComponent }
+      {path: 'usuario', component: UsuarioComponent , data:{titulo:'Administración de Usuarios'}},
+      {path: '**', redirectTo:'usuario'}
     ]
   }
 ];

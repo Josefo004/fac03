@@ -5,17 +5,22 @@ import { AdmuserRoutingModule } from './admuser-routing.module';
 import { UsuarioComponent } from './usuario/usuario.component';
 import { RolesComponent } from './roles/roles.component';
 import { PermisosComponent } from './permisos/permisos.component';
+import { RegisterComponent } from './register/register.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
   declarations: [
     UsuarioComponent,
     RolesComponent,
-    PermisosComponent
+    PermisosComponent,
+    RegisterComponent
   ],
   imports: [
     CommonModule,
-    AdmuserRoutingModule
+    AdmuserRoutingModule,
+    ReactiveFormsModule,
+    FormsModule
   ]
 })
 export class AdmuserModule { }

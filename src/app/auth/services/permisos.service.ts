@@ -20,20 +20,25 @@ export class PermisosService {
               private ngxpermisos: NgxPermissionsService) { }
   
   leer_permisos(id: any){
+    console.log('ID', id);
     let urlPermisos = `${this.apiUrl}/rolpermisos?id_usuario=${id}`;
     console.log(urlPermisos);
     return this.http.get<TPermiso[]>(urlPermisos)
             .pipe(
               tap(resp => {
-                this._permisos = resp[0].permisos;
-                console.log('GET PERMISOS',this._permisos);
-                this.ngxpermisos.loadPermissions(this._permisos)
+                if (resp.length>0) {
+                  this._permisos = resp[0].permisos;
+                  localStorage.setItem('permisos', JSON.stringify(this._permisos));
+                  console.log('TOMANDO PERMISOS',this._permisos);
+                  this.ngxpermisos.loadPermissions(this._permisos)
+                }
               })
             );
   }
 
   limpiar_permisos(){
     this._permisos = [];
+    localStorage.removeItem('permisos');
     this.ngxpermisos.flushPermissions();
   }
 }

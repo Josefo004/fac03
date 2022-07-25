@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot, UrlTree } from '@angular/router';
-import { NgxPermissionsService } from 'ngx-permissions';
-import { Observable, tap } from 'rxjs';
+
+import { Observable } from 'rxjs';
 import { AuthService } from '../services/auth.service';
-import { PermisosService } from '../services/permisos.service';
+import { tap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -11,17 +11,20 @@ import { PermisosService } from '../services/permisos.service';
 export class AuthGuard implements CanActivate {
 
   constructor(private authservice: AuthService,
-              private router: Router,
-              private ngxpermisos: NgxPermissionsService,
-              private perm: PermisosService){}
+              private router: Router){}
 
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
-
-      this.ngxpermisos.loadPermissions(this.perm.permisos);
-            
-    return true;
+ 
+    return this.authservice.estaLogeado()
+            .pipe(
+              tap( estaAUth =>{
+                if (!estaAUth) {
+                  this.router.navigate(['/']);
+                }
+              })
+            );
   }
   
 }

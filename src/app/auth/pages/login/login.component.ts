@@ -23,7 +23,6 @@ export class LoginComponent implements OnInit {
 
   constructor(private fb: UntypedFormBuilder,
               private authservice: AuthService,
-              private nxpermisos: PermisosService,
               private router: Router) { }
 
   ngOnInit(): void {
@@ -40,9 +39,8 @@ export class LoginComponent implements OnInit {
       .subscribe(resp => {
         if (resp.length>0) {
           this.router.navigate(['./factura']);
-          this.nxpermisos.leer_permisos(resp[0].id).subscribe();
         }else{this.hayError=true} 
-        console.log(resp);
+        console.log('LOGIN',resp);
       })
   }
 

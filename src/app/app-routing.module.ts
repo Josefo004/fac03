@@ -11,20 +11,26 @@ const routes:Routes = [
   },
   {
     path: 'factura', loadChildren: ()=>import('./factura/factura.module').then(m=>m.FacturaModule),
+    canActivate:[AuthGuard],
     data: {
-      permissions: {only: ['LOG'], redirectTo: '/403'}
+      permissions: {only: ['LOG', 'ADMIN'], redirectTo: '/403'}
     }
   },
   {
     path: 'admfactura', loadChildren: ()=>import('./admfactura/admfactura.module').then(m=>m.AdmfacturaModule),
-    canActivate:[NgxPermissionsGuard],
+    canActivate:[AuthGuard],
     data: {
       permissions: {only: ['LOG','ADMIN'], redirectTo: '/403'
       }
     }
   },
   {
-    path: 'admusuario', loadChildren: ()=>import('./admuser/admuser.module').then(m=>m.AdmuserModule)
+    path: 'admusuario', loadChildren: ()=>import('./admuser/admuser.module').then(m=>m.AdmuserModule),
+    canActivate:[AuthGuard],
+    data: {
+      permissions: {only: ['LOG','ADMIN'], redirectTo: '/403'
+      }
+    }
   },
   {
     path: '403', component: ErrorPageComponent

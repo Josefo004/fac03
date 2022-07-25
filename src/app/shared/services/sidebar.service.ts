@@ -29,6 +29,14 @@ export class SidebarService {
         {permisos: ['canProductos'], titulo:'Productos', url:'/admfactura/producto', icono:'far fa-circle nav-icon'},
         {permisos: ['canUnidad'],titulo:'Unidad de Medida', url:'/admfactura/unidadmendida', icono:'far fa-circle nav-icon'}
       ]
+    },
+    {
+      titulo:'Adm. Usuarios',
+      icono:'nav-icon fas fa-table',
+      permisos: ['ADMIN'],
+      submenu:[
+        {permisos: ['canUsuario'], titulo:'Usuarios', url:'/admusuario/usuario', icono:'far fa-circle nav-icon'}
+      ]
     }
   ]
 
