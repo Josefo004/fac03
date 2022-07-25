@@ -53,6 +53,11 @@ export class AuthService {
             )
   }
 
+  login2(bu:{}){
+    let urlLogin2 = `http://192.168.91.241:7072/oauth/token`;
+    return this.http.post(urlLogin2,bu)
+  }
+
   logout(){
     this._usuario = undefined;
     localStorage.removeItem('token');

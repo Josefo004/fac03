@@ -44,4 +44,20 @@ export class LoginComponent implements OnInit {
       })
   }
 
+  login2(){
+    const body = {
+      grant_type:"password",
+      client_id:"2",
+      client_secret:"1Fcw2KSAfeZ9gvebD2RkhuheXZXRlDphhgfuE7pH",
+      username:"correo@correo.com",
+      password:"12345678"
+    }
+    this.authservice.login2(body)
+      .subscribe(
+        resp=>console.log(resp),
+      e=>console.log('ERROR',e.error_description)
+      );
+
+  }
+
 }

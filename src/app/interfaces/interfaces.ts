@@ -22,3 +22,7 @@ export interface TPermiso {
   id_usuario: number;
   permisos:   string[];
 }
+export interface BDPermiso {
+  id:      number;
+  permiso: string;
+}
