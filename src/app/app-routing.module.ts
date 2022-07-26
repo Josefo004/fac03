@@ -10,6 +10,9 @@ const routes:Routes = [
     path: 'auth', loadChildren: ()=>import('./auth/auth.module').then(m=>m.AuthModule)
   },
   {
+    path: 'navegar', loadChildren: ()=>import('./navegar/navegar.module').then(m=>m.NavegarModule)
+  },
+  {
     path: 'factura', loadChildren: ()=>import('./factura/factura.module').then(m=>m.FacturaModule),
     canActivate:[AuthGuard],
     data: {
