@@ -1,39 +1,171 @@
 {
   "sucursales":[
-    [
-      {
-        "id":1,
-        "nroSucursal":0,
-        "nombre":"CASA MATRIZ",
-        "direccion":"PLAZA 25 DE MAYO NRO 17",
-        "telefono":"464-58144",
-        "created_at":"2022-07-21T21:01:38.000000Z",
-        "updated_at":"2022-07-21T21:01:38.000000Z"
-      },
-      {"id":2,"nroSucursal":1,"nombre":"SUCURSAL 1","direccion":"CARRETERA SUCRE YOTALA S\/N, CASTILLO DE LA GLORIETA, ZONA LA GLORIETA","telefono":"464-58144","created_at":"2022-07-21T21:01:38.000000Z","updated_at":"2022-07-21T21:01:38.000000Z"},
-      {"id":3,"nroSucursal":2,"nombre":"SUCURSAL 2","direccion":"CALLE SAN ALBERTO NRO 413, ZONA CENTRAL","telefono":"464-58144","created_at":"2022-07-21T21:01:38.000000Z","updated_at":"2022-07-21T21:01:38.000000Z"},
-      {"id":4,"nroSucursal":3,"nombre":"SUCURSAL 3","direccion":"PASAJE GANDARILLAS S\/N, ZONA LA MADONA","telefono":"464-58144","created_at":"2022-07-21T21:01:38.000000Z","updated_at":"2022-07-21T21:01:38.000000Z"},
-      {"id":5,"nroSucursal":4,"nombre":"SUCURSAL 4","direccion":"CALLE MANUEL VILAR S\/N, ZONA ESTADIUM PATRIA","telefono":"464-58144","created_at":"2022-07-21T21:01:39.000000Z","updated_at":"2022-07-21T21:01:39.000000Z"}
-    ]    
+    {
+      "id":1,
+      "nroSucursal":0,
+      "nombre":"CASA MATRIZ",
+      "direccion":"PLAZA 25 DE MAYO NRO 17",
+      "telefono":"464-58144",
+      "created_at":"2022-07-21T21:01:38.000000Z",
+      "updated_at":"2022-07-21T21:01:38.000000Z"
+    },
+    {"id":2,"nroSucursal":1,"nombre":"SUCURSAL 1","direccion":"CARRETERA SUCRE YOTALA S\/N, CASTILLO DE LA GLORIETA, ZONA LA GLORIETA","telefono":"464-58144","created_at":"2022-07-21T21:01:38.000000Z","updated_at":"2022-07-21T21:01:38.000000Z"},
+    {"id":3,"nroSucursal":2,"nombre":"SUCURSAL 2","direccion":"CALLE SAN ALBERTO NRO 413, ZONA CENTRAL","telefono":"464-58144","created_at":"2022-07-21T21:01:38.000000Z","updated_at":"2022-07-21T21:01:38.000000Z"},
+    {"id":4,"nroSucursal":3,"nombre":"SUCURSAL 3","direccion":"PASAJE GANDARILLAS S\/N, ZONA LA MADONA","telefono":"464-58144","created_at":"2022-07-21T21:01:38.000000Z","updated_at":"2022-07-21T21:01:38.000000Z"},
+    {"id":5,"nroSucursal":4,"nombre":"SUCURSAL 4","direccion":"CALLE MANUEL VILAR S\/N, ZONA ESTADIUM PATRIA","telefono":"464-58144","created_at":"2022-07-21T21:01:39.000000Z","updated_at":"2022-07-21T21:01:39.000000Z"}    
   ],
   "puntoVentas": [
-    [
-      {
-        "id":1, 
-        "nombrePuntoVenta": "ITSA-HUACARETA", 
-        "tipoPuntoVenta": "PUNTO DE VENTA CAJEROS", 
-        "nroPuntoVenta": 1, 
-        "sucursalId": 1
-      },
-      {"id":2, "nombrePuntoVenta": "CASTILLO DE LA GLORIETA", "tipoPuntoVenta": "PUNTO DE VENTA CAJEROS", "nroPuntoVenta": 1, "sucursalId": 2},
-      {"id":3, "nombrePuntoVenta": "CENTRO INTERNACIONAL DE CONVENCIONES – CICC", "tipoPuntoVenta": "PUNTO DE VENTA CAJEROS", "nroPuntoVenta": 2, "sucursalId": 2},
-      {"id":4, "nombrePuntoVenta": "TIENDA CETUR", "tipoPuntoVenta": "PUNTO DE VENTA CAJEROS", "nroPuntoVenta": 1, "sucursalId": 3},
-      {"id":5, "nombrePuntoVenta": "MUSEO CETUR", "tipoPuntoVenta": "PUNTO DE VENTA CAJEROS", "nroPuntoVenta": 2, "sucursalId": 3},
-      {"id":6, "nombrePuntoVenta": "DESARROLLO PRODUCTIVO", "tipoPuntoVenta": "PUNTO DE VENTA CAJEROS", "nroPuntoVenta": 1, "sucursalId": 4},
-      {"id":7, "nombrePuntoVenta": "PARQUELO LA MADONA", "tipoPuntoVenta": "PUNTO DE VENTA CAJEROS", "nroPuntoVenta": 2, "sucursalId": 4},
-      {"id":8, "nombrePuntoVenta": "UNIDAD DE TRANSPORTE", "tipoPuntoVenta": "PUNTO DE VENTA CAJEROS", "nroPuntoVenta": 3, "sucursalId": 4},
-      {"id":9, "nombrePuntoVenta": "DIRECCION DE MINERIA", "tipoPuntoVenta": "PUNTO DE VENTA CAJEROS", "nroPuntoVenta": 4, "sucursalId": 4},
-      {"id":10, "nombrePuntoVenta": "DEPORTES", "tipoPuntoVenta": "PUNTO DE VENTA CAJEROS", "nroPuntoVenta": 1, "sucursalId": 5}
-    ]
+    { 
+      "id": 1, 
+      "codigoPuntoVenta": 1, 
+      "nombrePuntoVenta": "ITSA-HUACARETA", 
+      "tipoPuntoVenta": "PUNTO DE VENTA CAJEROS", 
+      "sucursalId": 1
+    },
+    { "id": 2, "codigoPuntoVenta": 1, "nombrePuntoVenta": "CASTILLO DE LA GLORIETA", "tipoPuntoVenta": "PUNTO DE VENTA CAJEROS", "sucursalId": 2},
+    { "id": 3, "codigoPuntoVenta": 2, "nombrePuntoVenta": "CENTRO INTERNACIONAL DE CONVENCIONES – CICC", "tipoPuntoVenta": "PUNTO DE VENTA CAJEROS", "sucursalId": 2},
+    { "id": 4, "codigoPuntoVenta": 1, "nombrePuntoVenta": "TIENDA CETUR", "tipoPuntoVenta": "PUNTO DE VENTA CAJEROS", "sucursalId": 3},
+    { "id": 5, "codigoPuntoVenta": 2, "nombrePuntoVenta": "MUSEO CETUR", "tipoPuntoVenta": "PUNTO DE VENTA CAJEROS", "sucursalId": 3},
+    { "id": 6, "codigoPuntoVenta": 1, "nombrePuntoVenta": "DESARROLLO PRODUCTIVO", "tipoPuntoVenta": "PUNTO DE VENTA CAJEROS", "sucursalId": 4},
+    { "id": 7, "codigoPuntoVenta": 2, "nombrePuntoVenta": "PARQUELO LA MADONA", "tipoPuntoVenta": "PUNTO DE VENTA CAJEROS", "sucursalId": 4},
+    { "id": 8, "codigoPuntoVenta": 3, "nombrePuntoVenta": "UNIDAD DE TRANSPORTE", "tipoPuntoVenta": "PUNTO DE VENTA CAJEROS", "sucursalId": 4},
+    { "id": 9, "codigoPuntoVenta": 4, "nombrePuntoVenta": "DIRECCION DE MINERIA", "tipoPuntoVenta": "PUNTO DE VENTA CAJEROS", "sucursalId": 4},
+    { "id": 10, "codigoPuntoVenta": 1, "nombrePuntoVenta": "DEPORTES", "tipoPuntoVenta": "PUNTO DE VENTA CAJEROS", "sucursalId": 5}
+  ],
+  "usuarios": [
+    {
+      "id": 2,
+      "usuario": "p.correa@yahho.com",
+      "password": "1x2x3x",
+      "nombre": "Pamela Correa",
+      "nivel": 2
+    },
+    {
+      "id": 4,
+      "usuario": "juan1577@hotmail.com",
+      "password": "654321",
+      "nombre": "Juan José Carrasco Poveda",
+      "nivel": 2
+    },
+    {
+      "id": 1,
+      "usuario": "mendoza@gmail.com",
+      "password": "123",
+      "nombre": "José Mendoza Vargas",
+      "nivel": 1
+    },
+    {
+      "id": 5,
+      "usuario": "p.correa",
+      "password": "654321",
+      "nombre": "Pamela Correa",
+      "nivel": 2
+    },
+    {
+      "id": 7,
+      "usuario": "p.correa@yahhho.com",
+      "password": "123456789",
+      "nombre": "josefo mendoza",
+      "nivel": 1
+    },
+    {
+      "id": 8,
+      "usuario": "p2.correa@yahho.com",
+      "password": "1x2x3x",
+      "nombre": "JOSEFO MENDOZA",
+      "nivel": 2
+    },
+    {
+      "id": 9,
+      "usuario": "p13213.correa@yahho.com",
+      "password": "111111111",
+      "nombre": "JOse mendoza",
+      "nivel": 2
+    },
+    {
+      "id": 10,
+      "usuario": "jjc.correa@yahho.com",
+      "password": "111111",
+      "nombre": "Juan jose carrasco poveda",
+      "nivel": 2
+    },
+    {
+      "id": 12,
+      "usuario": "juanco@gamail.com",
+      "password": "111111",
+      "nombre": "juan jose carrasco",
+      "nivel": 1
+    },
+    {
+      "usuario": "mario@mail.com",
+      "password": "654321",
+      "nombre": "Mario Campos",
+      "nivel": "2",
+      "id": 13
+    }
+  ],
+  "rolpermisos": [
+    {
+      "id": 1,
+      "id_usuario": 1,
+      "permisos": [
+        "LOG",
+        "ADMIN",
+        "canDoFactura",
+        "canFindFactura",
+        "canSucursal",
+        "canpVenta",
+        "canProductos",
+        "canUnidad",
+        "canUsuario"
+      ]
+    },
+    {
+      "id": 2,
+      "id_usuario": 12,
+      "permisos": [
+        "LOG",
+        "canDoFactura",
+        "canFindFactura"
+      ]
+    }
+  ],
+  "permisos": [
+    {
+      "id": 1,
+      "permiso": "LOG"
+    },
+    {
+      "id": 2,
+      "permiso": "ADMIN"
+    },
+    {
+      "id": 3,
+      "permiso": "canDoFactura"
+    },
+    {
+      "id": 4,
+      "permiso": "canFindFactura"
+    },
+    {
+      "id": 5,
+      "permiso": "canSucursal"
+    },
+    {
+      "id": 6,
+      "permiso": "canpVenta"
+    },
+    {
+      "id": 7,
+      "permiso": "canProductos"
+    },
+    {
+      "id": 8,
+      "permiso": "canUnidad"
+    },
+    {
+      "id": 9,
+      "permiso": "canUsuario"
+    }
   ]
 }

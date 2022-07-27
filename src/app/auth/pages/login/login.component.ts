@@ -38,7 +38,7 @@ export class LoginComponent implements OnInit {
     this.authservice.login(usulogin)
       .subscribe(resp => {
         if (resp.length>0) {
-          this.router.navigate(['./factura']);
+          this.router.navigate(['./navegar']);
         }else{this.hayError=true} 
         console.log('LOGIN',resp);
       })

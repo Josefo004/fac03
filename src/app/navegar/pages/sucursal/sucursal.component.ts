@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NavegarService } from '../../services/navegar.service';
 import { tap } from 'rxjs';
+import { Tsucursal } from 'src/app/interfaces/interfaces';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sucursal',
@@ -8,22 +10,19 @@ import { tap } from 'rxjs';
 })
 export class SucursalComponent implements OnInit {
 
-  sucItems!: any[] | undefined;
+  sucItems!: Tsucursal[] | undefined;
 
-  constructor(private navegarServices: NavegarService) { }
+  constructor(private navegarServices: NavegarService,
+              private router: Router) { }
 
   ngOnInit(): void {
     this.navegarServices.allSucursales()
-      .pipe(
-        tap((resp: any)=>{
-          console.log(resp);
-          this.sucItems = this.navegarServices.sucursales;
-          console.log('total componete ', this.sucItems);
-        })
-    ).subscribe(); 
-    
-    //this.sucItems = this.navegarServices.sucursales;
-    //console.log('total componete ', this.sucItems);
+      .subscribe( sucrs => this.sucItems = sucrs); 
+  }
+
+  irAsucursal(ids:number){
+    console.log('Ir a la sucursal ',ids);
+    this.router.navigate([`./navegar/puntoventa/${ids}`]);
   }
 
 }

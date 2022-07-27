@@ -22,7 +22,7 @@ export class SidebarComponent implements OnInit {
               private router:Router,
               private sidebarservice:SidebarService,
               private perm : PermisosService) {
-    this.menuItems = this.sidebarservice.menu;
+    //this.menuItems = this.sidebarservice.menu;
   }
 
   ngOnInit(): void {

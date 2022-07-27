@@ -26,3 +26,21 @@ export interface BDPermiso {
   id:      number;
   permiso: string;
 }
+
+export interface Tsucursal {
+  id:          number;
+  nroSucursal: number;
+  nombre:      string;
+  direccion:   string;
+  telefono:    string;
+  created_at:  Date;
+  updated_at:  Date;
+}
+
+export interface TpuntoVenta {
+  id:               number;
+  codigoPuntoVenta: number;
+  nombrePuntoVenta: string;
+  tipoPuntoVenta:   string;
+  sucursalId:       number;
+}
