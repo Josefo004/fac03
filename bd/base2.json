@@ -19,16 +19,21 @@
   "puntoVentas": [
     [
       {
-        "codigoPuntoVenta":1,
-        "nombrePuntoVenta":"CASTILLO LA GLORIETA",
-        "tipoPuntoVenta":"PUNTO DE VENTA CAJEROS",
-        "nroSucursal":0,
-        "sucursalId":1
+        "id":1, 
+        "nombrePuntoVenta": "ITSA-HUACARETA", 
+        "tipoPuntoVenta": "PUNTO DE VENTA CAJEROS", 
+        "nroPuntoVenta": 1, 
+        "sucursalId": 1
       },
-      {"codigoPuntoVenta":2,"nombrePuntoVenta":"ITSA-HUACARETA","tipoPuntoVenta":"PUNTO DE VENTA CAJEROS","nroSucursal":0,
-      "sucursalId":1},
-      {"codigoPuntoVenta":3,"nombrePuntoVenta":"ITSA-HUACARETA","tipoPuntoVenta":"PUNTO DE VENTA CAJEROS","nroSucursal":0,
-      "sucursalId":1}
+      {"id":2, "nombrePuntoVenta": "CASTILLO DE LA GLORIETA", "tipoPuntoVenta": "PUNTO DE VENTA CAJEROS", "nroPuntoVenta": 1, "sucursalId": 2},
+      {"id":3, "nombrePuntoVenta": "CENTRO INTERNACIONAL DE CONVENCIONES – CICC", "tipoPuntoVenta": "PUNTO DE VENTA CAJEROS", "nroPuntoVenta": 2, "sucursalId": 2},
+      {"id":4, "nombrePuntoVenta": "TIENDA CETUR", "tipoPuntoVenta": "PUNTO DE VENTA CAJEROS", "nroPuntoVenta": 1, "sucursalId": 3},
+      {"id":5, "nombrePuntoVenta": "MUSEO CETUR", "tipoPuntoVenta": "PUNTO DE VENTA CAJEROS", "nroPuntoVenta": 2, "sucursalId": 3},
+      {"id":6, "nombrePuntoVenta": "DESARROLLO PRODUCTIVO", "tipoPuntoVenta": "PUNTO DE VENTA CAJEROS", "nroPuntoVenta": 1, "sucursalId": 4},
+      {"id":7, "nombrePuntoVenta": "PARQUELO LA MADONA", "tipoPuntoVenta": "PUNTO DE VENTA CAJEROS", "nroPuntoVenta": 2, "sucursalId": 4},
+      {"id":8, "nombrePuntoVenta": "UNIDAD DE TRANSPORTE", "tipoPuntoVenta": "PUNTO DE VENTA CAJEROS", "nroPuntoVenta": 3, "sucursalId": 4},
+      {"id":9, "nombrePuntoVenta": "DIRECCION DE MINERIA", "tipoPuntoVenta": "PUNTO DE VENTA CAJEROS", "nroPuntoVenta": 4, "sucursalId": 4},
+      {"id":10, "nombrePuntoVenta": "DEPORTES", "tipoPuntoVenta": "PUNTO DE VENTA CAJEROS", "nroPuntoVenta": 1, "sucursalId": 5}
     ]
   ]
 }

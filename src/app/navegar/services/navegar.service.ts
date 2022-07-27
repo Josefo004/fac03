@@ -22,9 +22,8 @@ export class NavegarService {
     return this.http.get<any[]>(urlSucursal)
             .pipe(
               tap(resp => {
-                this._sucursales = resp;
-                console.log(this._sucursales[0]);
-                console.log('total ',this._sucursales[0].length);
+                this._sucursales = resp[0];
+                //console.log(this._sucursales);
               })
             );
   }
