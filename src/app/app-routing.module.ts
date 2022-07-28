@@ -10,7 +10,11 @@ const routes:Routes = [
     path: 'auth', loadChildren: ()=>import('./auth/auth.module').then(m=>m.AuthModule)
   },
   {
-    path: 'navegar', loadChildren: ()=>import('./navegar/navegar.module').then(m=>m.NavegarModule)
+    path: 'navegar', loadChildren: ()=>import('./navegar/navegar.module').then(m=>m.NavegarModule),
+    canActivate:[AuthGuard],
+    data: {
+      permissions: {only: ['LOG', 'ADMIN'], redirectTo: '/403'}
+    }
   },
   {
     path: 'factura', loadChildren: ()=>import('./factura/factura.module').then(m=>m.FacturaModule),
@@ -31,7 +35,7 @@ const routes:Routes = [
     path: 'admusuario', loadChildren: ()=>import('./admuser/admuser.module').then(m=>m.AdmuserModule),
     canActivate:[AuthGuard],
     data: {
-      permissions: {only: ['LOG','ADMIN'], redirectTo: '/403'
+      permissions: {only: ['ADMIN'], redirectTo: '/403'
       }
     }
   },

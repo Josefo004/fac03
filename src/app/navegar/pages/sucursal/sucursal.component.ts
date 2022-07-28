@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class SucursalComponent implements OnInit {
 
-  sucItems!: Tsucursal[] | undefined;
+  sucItems!: Tsucursal[];
 
   constructor(private navegarServices: NavegarService,
               private router: Router) { }
@@ -21,8 +21,19 @@ export class SucursalComponent implements OnInit {
   }
 
   irAsucursal(ids:number){
-    console.log('Ir a la sucursal ',ids);
-    this.router.navigate([`./navegar/puntoventa/${ids}`]);
+    //console.log('INDEX',ids);
+    
+    const ob:string[]=[
+      this.sucItems[ids].id+'',
+      this.sucItems[ids].nroSucursal+'',
+      this.sucItems[ids].nombre
+    ];
+
+    //console.log(ob);
+  
+    this.navegarServices.limpiarS();
+    this.navegarServices.sSucursal(ob);
+    this.router.navigate([`./navegar/puntoventa/${this.sucItems[ids].id}`]);
   }
 
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { switchMap } from 'rxjs';
 import { TpuntoVenta } from 'src/app/interfaces/interfaces';
 import { NavegarService } from '../../services/navegar.service';
@@ -15,7 +15,8 @@ export class PuntoVentaComponent implements OnInit {
   pdvItems!: TpuntoVenta[];
   
   constructor(private navegarServices: NavegarService,
-              private activatedroute:ActivatedRoute) { }
+              private activatedroute:ActivatedRoute,
+              private router: Router) { }
 
   ngOnInit(): void {
     this.activatedroute.params
@@ -23,6 +24,22 @@ export class PuntoVentaComponent implements OnInit {
         switchMap(({ ids }) => this.navegarServices.allPuntoVentas( ids ) )
       )
       .subscribe(pVentas => this.pdvItems = pVentas)
+  }
+
+  irApuntoVenta(idp:number){
+    
+    const ob:string[]=[
+      this.pdvItems[idp].id+'',
+      this.pdvItems[idp].codigoPuntoVenta+'',
+      this.pdvItems[idp].nombrePuntoVenta+' (PUNTO -'+this.pdvItems[idp].codigoPuntoVenta+')'
+    ];
+    
+    //console.log(this.pdvItems[idp]);
+
+    this.navegarServices.limpiarP();
+    this.navegarServices.sPuntoVenta(ob);
+    
+    this.router.navigate([`./factura`]);
   }
 
 }

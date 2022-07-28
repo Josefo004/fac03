@@ -1,7 +1,8 @@
-import { Component, OnDestroy } from '@angular/core';
+import { Component } from '@angular/core';
 import { ActivationEnd, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { filter, map } from 'rxjs/operators';
+import { NavegarService } from 'src/app/navegar/services/navegar.service';
 
 @Component({
   selector: 'app-breadcrumbs',
@@ -9,27 +10,16 @@ import { filter, map } from 'rxjs/operators';
   styles: [
   ]
 })
-export class BreadcrumbsComponent implements OnDestroy {
+export class BreadcrumbsComponent {
 
-  public titulo?:string;
-  public tituloSubs$:Subscription;
-  constructor(private router:Router) {
-    this.tituloSubs$ = this.getArgumentos().subscribe(({titulo})=>{
-      this.titulo = titulo;
-      document.title = `AdminLte - ${titulo}`;
-    })
-   }
-
-  ngOnDestroy(): void {
-    this.tituloSubs$.unsubscribe();
+  get titulo (){
+    return this.navegarservice.titulo;
+  }
+    
+  constructor(private navegarservice:NavegarService) {
+    
   }
 
-  getArgumentos(){
-    return this.router.events.pipe(
-      filter((event:any) => event instanceof ActivationEnd),
-      filter((event:ActivationEnd)=> event.snapshot.firstChild === null),
-      map((event:ActivationEnd)=> event.snapshot.data)
-    );
-  }
+ 
 
 }
