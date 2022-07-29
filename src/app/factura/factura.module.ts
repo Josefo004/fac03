@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgxPermissionsModule } from 'ngx-permissions';
+import { SharedModule } from '../shared/shared.module';
 
 import { FacturaRoutingModule } from './factura-routing.module';
 import { FacturaComponent } from './pages/factura/factura.component';
 import { FindFacturaComponent } from './pages/find-factura/find-factura.component';
 import { HomeComponent } from './pages/home/home.component';
-import { SharedModule } from '../shared/shared.module';
-import { NgxPermissionsModule } from 'ngx-permissions';
 
 @NgModule({
   declarations: [
@@ -16,9 +16,9 @@ import { NgxPermissionsModule } from 'ngx-permissions';
   ],
   imports: [
     CommonModule,
+    NgxPermissionsModule,
     FacturaRoutingModule,
-    SharedModule,
-    NgxPermissionsModule
+    SharedModule
   ],
   exports:[HomeComponent]
 })

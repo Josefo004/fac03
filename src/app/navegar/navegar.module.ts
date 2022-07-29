@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { SucursalComponent } from './pages/sucursal/sucursal.component';
 import { PuntoVentaComponent } from './pages/punto-venta/punto-venta.component';
 import { NavegarRoutingModule } from './navegar-routing.module';
-import { MaterialModule } from '../material/material.module';
 
 @NgModule({
   declarations: [
@@ -12,8 +11,7 @@ import { MaterialModule } from '../material/material.module';
   ],
   imports: [
     CommonModule,
-    NavegarRoutingModule,
-    MaterialModule
+    NavegarRoutingModule
   ]
 })
 export class NavegarModule { }
