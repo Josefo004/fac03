@@ -43,14 +43,22 @@
             </li>
           </ul>
         </li>
+        <li class="nav-item" *ngxPermissionsOnly="['ADMIN']" >
+          <a class="nav-link"  style="cursor: pointer;" routerLink="/admusuario/usuario">
+              <i class="nav-icon fas fa-table"></i>
+              <p class="ml-2">
+                Adm. Usuarios
+              </p>
+          </a>
+        </li>
         <li class="nav-item">
           <a class="nav-link"  style="cursor: pointer;" (click)="logout()">
               <i class="nav-icon fas fa-sign-out-alt"></i>
               <p class="ml-2">
-              Salir
+                Salir
               </p>
           </a>
-      </li>  
+        </li>  
       </ul>
     </nav>
   </div>

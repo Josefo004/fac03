@@ -12,19 +12,22 @@ import { VentasService } from '../../services/ventas.service';
 })
 export class FindFacturaComponent implements OnInit {
 
-  ventasItems!: TVenta[];
+  ventasItems: TVenta[]=[];
 
   get titulo (){
     return this.navegarservice.titulo;
   }
+
+  termino:string='';
+  por:string[1]=''; //radio butin
 
   constructor(private navegarservice:NavegarService,
               private router: Router,
               private ventasService: VentasService) { }
 
   ngOnInit(): void {
-    this.ventasService.utimos15()
-      .subscribe( vts => this.ventasItems = vts );
+    this.ultimos15();
+    this.por='1';
   }
 
   mainNavegar(){
@@ -34,7 +37,40 @@ export class FindFacturaComponent implements OnInit {
   }
 
   buscar(termino:string){
-    console.log('DESEDE FIND FACTURA', termino);
+    this.termino = termino;
+    this.ventasItems=[];
+    if (this.termino.length>1){
+      if (this.por === '1') {  
+        this.ventasService.buscarPorDocumento(this.termino)
+          .subscribe(vts => this.ventasItems = vts)
+      }
+      else{
+        this.ventasService.buscarPorRazonSocial(this.termino)
+          .subscribe(vts => this.ventasItems = vts)
+      }
+    }
+  }
+
+  sugerencias(termino:string){
+    this.termino = termino;
+    this.ventasItems=[];
+    if (this.por==='1') {
+      if (this.termino.length>=3) {
+        this.ventasService.buscarPorDocumento(this.termino)
+          .subscribe(vts => this.ventasItems = vts)
+      }
+    }
+    else{
+      if (this.termino.length>=5) {
+        this.ventasService.buscarPorRazonSocial(this.termino)
+          .subscribe(vts => this.ventasItems = vts)
+      }
+    }
+  }
+
+  ultimos15(){
+    this.ventasService.utimos15()
+      .subscribe( vts => this.ventasItems = vts );
   }
 
 }

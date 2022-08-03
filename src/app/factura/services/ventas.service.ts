@@ -23,4 +23,16 @@ export class VentasService {
     console.log(urlVentas);
     return this.http.get<TVenta[]>(urlVentas);
   }
+
+  buscarPorDocumento(nd:string){
+    const urlVentas = `${this.apiUrl}/ventas?nroDocumento_like=${nd}&puntoVentaId=${this.puntoVenta[0]}&_sort=id&_order=desc`;
+    console.log(urlVentas);
+    return this.http.get<TVenta[]>(urlVentas);
+  }
+
+  buscarPorRazonSocial(rs:string){
+    const urlVentas = `${this.apiUrl}/ventas?razonSocial_like=${rs}&puntoVentaId=${this.puntoVenta[0]}&_sort=id&_order=desc`;
+    console.log(urlVentas);
+    return this.http.get<TVenta[]>(urlVentas);
+  }
 }

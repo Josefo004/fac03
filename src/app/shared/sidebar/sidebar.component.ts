@@ -13,7 +13,7 @@ import { SidebarService } from '../services/sidebar.service';
 })
 export class SidebarComponent implements OnInit {
 
-  menuItems?:any[];
+  menuItems:any[]=[];
   
   get auth(){
     return this.authservice.auth;
@@ -24,11 +24,15 @@ export class SidebarComponent implements OnInit {
               private sidebarservice:SidebarService,
               private perm : PermisosService,
               private navegarService: NavegarService) {
-    //this.menuItems = this.sidebarservice.menu;
   }
 
   ngOnInit(): void {
     
+  }
+
+  public menu(){
+    this.menuItems = [];
+    this.menuItems = this.sidebarservice.menu;
   }
 
   logout(){

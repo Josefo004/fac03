@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class SidebarService {
 
-  menu:any[]=[
+  menu:{}[]=[
     {
     titulo:'Factura',
     icono:'nav-icon fas fa-copy',
