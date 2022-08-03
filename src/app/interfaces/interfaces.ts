@@ -44,3 +44,14 @@ export interface TpuntoVenta {
   tipoPuntoVenta:   string;
   sucursalId:       number;
 }
+
+export interface TVenta {
+  id:           number;
+  razonSocial:  string;
+  fechHora:     Date;
+  monto:        number;
+  nroDocumento: string;
+  estado:       boolean;
+  puntoVentaId: number;
+}
+
