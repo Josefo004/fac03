@@ -37,7 +37,9 @@ export class PuntoVentaComponent implements OnInit {
     //console.log(this.pdvItems[idp]);
 
     this.navegarServices.limpiarP();
+    this.navegarServices.limpiaeSM();
     this.navegarServices.sPuntoVenta(ob);
+    this.navegarServices.sShowMenu(true);
     
     this.router.navigate([`./factura`]);
   }

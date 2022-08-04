@@ -9,6 +9,7 @@ import { environment } from 'src/environments/environment';
 export class NavegarService {
   private _sucursalN   : string[]=[];
   private _puntoVentaN : string[]=[];
+  private _showMenuN    : boolean = false;
 
   private _titulo!: string;
 
@@ -41,5 +42,9 @@ export class NavegarService {
   limpiarP(){this._puntoVentaN=[];}
   get puntoVentaN(){return this._puntoVentaN;}
   sPuntoVenta(a:string[]){this._puntoVentaN = a;}
+
+  limpiaeSM(){this._showMenuN=false;}
+  get showMenuN(){return this._showMenuN;}
+  sShowMenu(a:boolean){this._showMenuN = a;}
   
 }

@@ -13,10 +13,10 @@ export class SidebarService {
     submenu:[
       {
         permisos: ['canDoFactura'],
-        titulo:'Buscar Factura', url:'/factura/findfactura', icono:'far fa-circle nav-icon'},
+        titulo:'Buscar Detallado', url:'/factura/findfacturadetalle', icono:'far fa-circle nav-icon'},
       {
         permisos: ['canFindFactura'],
-        titulo:'Hacer Factura', url:'/factura/factura', icono:'far fa-circle nav-icon'}
+        titulo:'Nueva Venta/Factura', url:'/factura/factura', icono:'far fa-circle nav-icon'}
     ]
     },
     {

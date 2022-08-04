@@ -5,6 +5,7 @@ import { PermisosService } from 'src/app/auth/services/permisos.service';
 import { NavegarService } from 'src/app/navegar/services/navegar.service';
 import { SidebarService } from '../services/sidebar.service';
 
+
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
@@ -12,6 +13,7 @@ import { SidebarService } from '../services/sidebar.service';
   ]
 })
 export class SidebarComponent implements OnInit {
+  [x: string]: any;
 
   menuItems:any[]=[];
   
@@ -19,15 +21,19 @@ export class SidebarComponent implements OnInit {
     return this.authservice.auth;
   }
 
+  get mostrarM(){
+    return this.navegarService.showMenuN;
+  }
+
   constructor(private authservice:AuthService,
               private router:Router,
-              private sidebarservice:SidebarService,
               private perm : PermisosService,
+              private sidebarservice: SidebarService,
               private navegarService: NavegarService) {
   }
 
   ngOnInit(): void {
-    
+    this.menu();
   }
 
   public menu(){
@@ -38,6 +44,7 @@ export class SidebarComponent implements OnInit {
   logout(){
     this.navegarService.limpiarS();
     this.navegarService.limpiarP();
+    this.navegarService.limpiaeSM();
     this.perm.limpiar_permisos();
     this.authservice.logout();
     this.router.navigate(['/']);
@@ -47,9 +54,7 @@ export class SidebarComponent implements OnInit {
     this.router.navigate(['/navegar']);
     this.navegarService.limpiarS();
     this.navegarService.limpiarP();
+    this.navegarService.limpiaeSM();
   }
 
-  navegarA(url:string){
-    this.router.navigate([url]);
-  }
 }

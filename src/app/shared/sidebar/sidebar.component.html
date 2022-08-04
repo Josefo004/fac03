@@ -23,26 +23,28 @@
       <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="true">
         <!-- Add icons to the links using the .nav-icon class
               with font-awesome or any other icon font library -->
-        <li class="nav-item" *ngFor="let item of menuItems">
-          <a class="nav-link" *ngxPermissionsOnly="item.permisos">
-            <i class="nav-icon fas fa-tachometer-alt"></i>
-            <p>
-              <strong>
-                {{item.titulo}}
-              </strong>
-              <span class="badge badge-info right ml-2">{{item.submenu.length}}</span>
-              <i class="right fas fa-angle-left"></i>
-            </p>
-          </a>
-          <ul class="nav">
-            <li class="nav-item" *ngFor="let subMenu of item.submenu">
-              <a [routerLink]=[subMenu.url] *ngxPermissionsOnly="[subMenu.permisos]" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
-                <p>{{subMenu.titulo}}</p>
-              </a>
-            </li>
-          </ul>
-        </li>
+        <div *ngIf="mostrarM">
+          <li class="nav-item" *ngFor="let item of menuItems">
+            <a class="nav-link" *ngxPermissionsOnly="item.permisos">
+              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <p>
+                <strong>
+                  {{item.titulo}}
+                </strong>
+                <span class="badge badge-info right ml-2">{{item.submenu.length}}</span>
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav">
+              <li class="nav-item" *ngFor="let subMenu of item.submenu">
+                <a [routerLink]=[subMenu.url] *ngxPermissionsOnly="[subMenu.permisos]" class="nav-link">
+                  <i class="{{subMenu.icono}}"></i> 
+                  <p>{{subMenu.titulo}}</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+        </div>
         <li class="nav-item" *ngxPermissionsOnly="['ADMIN']" >
           <a class="nav-link"  style="cursor: pointer;" routerLink="/admusuario/usuario">
               <i class="nav-icon fas fa-table"></i>
