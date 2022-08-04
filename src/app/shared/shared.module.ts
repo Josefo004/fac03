@@ -10,6 +10,7 @@ import { FooterComponent } from './footer/footer.component';
 import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs.component';
 import { ErrorPageComponent } from './error-page/error-page.component';
 import { InputComponent } from './input/input.component';
+import { OopsPageComponent } from './oops-page/oops-page.component';
 
 
 
@@ -20,7 +21,8 @@ import { InputComponent } from './input/input.component';
     FooterComponent,
     BreadcrumbsComponent,
     ErrorPageComponent,
-    InputComponent
+    InputComponent,
+    OopsPageComponent
   ],
   imports: [
     CommonModule,
@@ -34,7 +36,8 @@ import { InputComponent } from './input/input.component';
     FooterComponent,
     BreadcrumbsComponent,
     InputComponent,
-    ErrorPageComponent
+    ErrorPageComponent,
+    OopsPageComponent
   ]
 })
 export class SharedModule { }

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { TVenta } from 'src/app/interfaces/interfaces';
 import { NavegarService } from 'src/app/navegar/services/navegar.service';
 import { VentasService } from '../../services/ventas.service';
@@ -22,7 +21,6 @@ export class FindFacturaComponent implements OnInit {
   por:string[1]=''; //radio butin
 
   constructor(private navegarservice:NavegarService,
-              private router: Router,
               private ventasService: VentasService) { }
 
   ngOnInit(): void {
@@ -30,11 +28,7 @@ export class FindFacturaComponent implements OnInit {
     this.por='1';
   }
 
-  mainNavegar(){
-    this.router.navigate(['/navegar']);
-    this.navegarservice.limpiarS();
-    this.navegarservice.limpiarP();
-  }
+ 
 
   buscar(termino:string){
     this.termino = termino;

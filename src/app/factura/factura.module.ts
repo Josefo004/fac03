@@ -25,4 +25,4 @@ import { HomeComponent } from './pages/home/home.component';
   ],
   exports:[HomeComponent]
 })
-export class FacturaModule { }
+export class FacturaModule {}
