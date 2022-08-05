@@ -16,7 +16,7 @@ export class SidebarService {
         titulo:' Nueva Factura', url:'/factura/factura', icono:'fas fa-calculator'},
       {
         permisos: ['canFindFactura'],
-        titulo:' Busqueda Avanzada', url:'/factura/busquedaA', icono:'fa fa-search-plus'}
+        titulo:' Busqueda Factura', url:'/factura/busquedaA', icono:'fa fa-search-plus'}
     ]
     },
     {

@@ -48,7 +48,7 @@ export class FacturaComponent  {
     const newRazon : TNRazonSocial={
       razonSocial:  this.rsnameM.toUpperCase(),
       nroDocumento: this.nroDocumentoM,
-      tipoDoc:      this.nroDocumentoM
+      tipoDoc:      this.tipoDocM
     };
 
     if (newRazon.nroDocumento.length>0&&newRazon.nroDocumento.length>3&&newRazon.tipoDoc.length>0) {
