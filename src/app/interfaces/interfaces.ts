@@ -55,3 +55,9 @@ export interface TVenta {
   puntoVentaId: number;
 }
 
+export interface TRazonSocial {
+  id:           number;
+  razonSocial:  string;
+  nroDocumento: string;
+  tipoDoc:      string;
+}

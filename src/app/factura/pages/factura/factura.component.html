@@ -1,4 +1,30 @@
 <div *ngIf="titulo.length>0">
-
+  <section>
+    <div class="row mb-2">
+      <div class="col-md-3">
+        <label for="termino">No de Documento</label>
+        <app-input
+          (onEnter)="buscar( $event )"
+          >
+        </app-input>
+      </div>
+      <div class="col-md-5">
+        <label for="razonSocial">Razon Social</label>
+        <div class="input-group mb-3">
+          <input 
+            type="text" 
+            name="rsname"
+            class="form-control" 
+            [(ngModel)]="razonSocial.razonSocial"
+            readonly>
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="far fa-file-alt"></span>
+            </div>
+          </div>  
+        </div>
+      </div>
+    </div>
+  </section>
 </div>
 <app-oops-page></app-oops-page>

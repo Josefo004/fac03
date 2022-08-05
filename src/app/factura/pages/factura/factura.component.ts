@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { TRazonSocial } from 'src/app/interfaces/interfaces';
 import { NavegarService } from 'src/app/navegar/services/navegar.service';
+import { RazonSocialService } from '../../services/razon-social.service';
 
 @Component({
   selector: 'app-factura',
@@ -7,15 +9,26 @@ import { NavegarService } from 'src/app/navegar/services/navegar.service';
   styles: [
   ]
 })
-export class FacturaComponent implements OnInit {
+export class FacturaComponent  {
 
   get titulo (){
     return this.navegarservice.titulo;
   }
 
-  constructor(private navegarservice:NavegarService) { }
-
-  ngOnInit(): void {
+  get razonSocial(){
+    return this.razonSocialService.razonSocial;
   }
+
+  termino:string='';
+
+  constructor(private navegarservice: NavegarService,
+              private razonSocialService: RazonSocialService) { }
+
+  buscar(termino:string){
+    //console.log(termino);
+    this.razonSocialService.buscarRazon(termino)
+      .subscribe(resp=>console.log(resp));
+  }
+
 
 }
