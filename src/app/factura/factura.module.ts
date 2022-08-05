@@ -9,12 +9,14 @@ import { FacturaRoutingModule } from './factura-routing.module';
 import { FacturaComponent } from './pages/factura/factura.component';
 import { FindFacturaComponent } from './pages/find-factura/find-factura.component';
 import { HomeComponent } from './pages/home/home.component';
+import { ModalNewRazonSocialComponent } from './pages/modal-new-razon-social/modal-new-razon-social.component';
 
 @NgModule({
   declarations: [
     FacturaComponent,
     FindFacturaComponent,
-    HomeComponent
+    HomeComponent,
+    ModalNewRazonSocialComponent
   ],
   imports: [
     CommonModule,

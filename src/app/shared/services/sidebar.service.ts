@@ -27,7 +27,7 @@ export class SidebarService {
         {permisos: ['canSucursal'], titulo:'Sucursales', url:'/admfactura/sucursal', icono:'far fa-circle nav-icon'},
         {permisos: ['canpVenta'], titulo:'Puntos de Venta', url:'/admfactura/puntoventa', icono:'far fa-circle nav-icon'},
         {permisos: ['canProductos'], titulo:'Productos', url:'/admfactura/producto', icono:'far fa-circle nav-icon'},
-        {permisos: ['canUnidad'],titulo:'Unidad de Medida', url:'/admfactura/unidadmendida', icono:'far fa-circle nav-icon'}
+        {permisos: ['canUnidad'], titulo:'Unidad de Medida', url:'/admfactura/unidadmendida', icono:'far fa-circle nav-icon'}
       ]
     },
     {

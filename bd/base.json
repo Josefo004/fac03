@@ -1128,6 +1128,12 @@
       "preciou": 5,
       "idsucursal": 4,
       "idpventa": 9
+    },
+    {
+      "razonSocial": "JOSEFO MENDOZA",
+      "nroDocumento": "1111111",
+      "tipoDoc": "NIT",
+      "id": 131
     }
   ],
   "unidades": [

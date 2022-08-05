@@ -1,8 +1,12 @@
 # Fac03
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.6.
+Proyecto Genreado con [Angular CLI](https://github.com/angular/angular-cli) version 14.0.6.
 
-## Development server
+## Servido de Desarrollo
+
+En la carpeta bd está el archivo json base2.json que es levantado con el paquete `json-server`
+el comando para levantar el servidor json local es: `json-server --watch db.json`
+
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 

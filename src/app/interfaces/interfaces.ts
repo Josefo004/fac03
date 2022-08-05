@@ -61,3 +61,9 @@ export interface TRazonSocial {
   nroDocumento: string;
   tipoDoc:      string;
 }
+
+export interface TNRazonSocial {
+  razonSocial:  string;
+  nroDocumento: string;
+  tipoDoc:      string;
+}
