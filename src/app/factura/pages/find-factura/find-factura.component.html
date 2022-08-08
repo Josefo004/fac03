@@ -54,7 +54,18 @@
                   <td>{{ item.razonSocial | titlecase }}</td>
                   <td class="text-right">Bs. {{ item.monto | number : '1.2-2' }}</td>
                   <td>{{ item.estado }}</td> 
-                  <td> --- </td>
+                  <td>
+                    <span class="p-2">
+                      <a (click)="verdetalle(item.id)" class="badge bg-primary" title="DETALLE DE : {{ item.razonSocial }}">
+                        <i class="fa fa-eye"></i>
+                      </a>
+                    </span>
+                    <span class="p-2">
+                      <a href="" class="badge bg-primary" title="IMPRIMIR DOC : {{ item.id }}">
+                        <i class="fa fa-file-pdf"></i>
+                      </a>
+                    </span>
+                  </td>
                 </tr>
               </tbody>
             </table>

@@ -56,14 +56,30 @@ export interface TVenta {
 }
 
 export interface TRazonSocial {
-  id:           number;
+  id?:          number;
   razonSocial:  string;
   nroDocumento: string;
   tipoDoc:      string;
 }
 
-export interface TNRazonSocial {
-  razonSocial:  string;
-  nroDocumento: string;
-  tipoDoc:      string;
+export interface TProducto {
+  id:             number;
+  producto:       string;
+  unidad:         string;
+  precioUnitario: number;
+  sucursalId:     number;
+  puntoVentaId:   number;
 }
+
+export interface TProductoV {
+  id?:            number;
+  producto:       string;
+  unidad:         string;
+  precioUnitario: number;
+  cantidad:       number;
+  sucursalId:     number;
+  puntoVentaId:   number;
+  ventaId:        number;
+}
+
+

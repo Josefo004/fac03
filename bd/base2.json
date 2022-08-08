@@ -9254,6 +9254,51 @@
       "nroDocumento": "4748159",
       "estado": false,
       "puntoVentaId": 3
+    },
+    {
+      "id": 1001,
+      "razonSocial": "PLANTA1",
+      "fechHora": "2022-08-07T21:52:26.111Z",
+      "monto": 165.5,
+      "nroDocumento": "22222",
+      "estado": false,
+      "puntoVentaId": 1
+    },
+    {
+      "id": 1002,
+      "razonSocial": "PLANTA1",
+      "fechHora": "2022-08-07T22:31:06.844Z",
+      "monto": 61.6,
+      "nroDocumento": "22222",
+      "estado": false,
+      "puntoVentaId": 1
+    },
+    {
+      "id": 1003,
+      "razonSocial": "PLANTA1",
+      "fechHora": "2022-08-07T22:34:17.916Z",
+      "monto": 13030,
+      "nroDocumento": "22222",
+      "estado": false,
+      "puntoVentaId": 1
+    },
+    {
+      "id": 1004,
+      "razonSocial": "PLANTA1",
+      "fechHora": "2022-08-07T22:42:35.328Z",
+      "monto": 70,
+      "nroDocumento": "22222",
+      "estado": false,
+      "puntoVentaId": 2
+    },
+    {
+      "id": 1005,
+      "razonSocial": "SOLO 5",
+      "fechHora": "2022-08-08T01:49:32.149Z",
+      "monto": 825,
+      "nroDocumento": "5555",
+      "estado": true,
+      "puntoVentaId": 4
     }
   ],
   "razonSocial": [
@@ -15286,6 +15331,36 @@
       "nroDocumento": "963852741",
       "tipoDoc": "NIT",
       "id": 1005
+    },
+    {
+      "razonSocial": "PLANTA DE LECHE",
+      "nroDocumento": "741258963",
+      "tipoDoc": "CEDULA",
+      "id": 1006
+    },
+    {
+      "razonSocial": "PLANTA1",
+      "nroDocumento": "22222",
+      "tipoDoc": "CEDULA",
+      "id": 1007
+    },
+    {
+      "razonSocial": "PLANTA 2",
+      "nroDocumento": "33333",
+      "tipoDoc": "CEDULA",
+      "id": 1008
+    },
+    {
+      "razonSocial": "PLANTA 3",
+      "nroDocumento": "44444",
+      "tipoDoc": "CEDULA",
+      "id": 1009
+    },
+    {
+      "razonSocial": "SOLO 5",
+      "nroDocumento": "5555",
+      "tipoDoc": "PASAPORTE",
+      "id": 1010
     }
   ],
   "productos": [
@@ -16328,6 +16403,57 @@
       "precioUnitario": 5,
       "sucursalId": 4,
       "puntoVentaId": 9
+    }
+  ],
+  "detalleVentas": [
+    {
+      "id": 1,
+      "producto": "REPOSICION FORMULARIO 101",
+      "unidad": "UNIDAD",
+      "precioUnitario": 12.5,
+      "sucursalId": 1,
+      "puntoVentaId": 1,
+      "ventaId": 1001
+    },
+    {
+      "producto": "EXTRANJEROS",
+      "unidad": "BOLETO",
+      "precioUnitario": 20,
+      "cantidad": "2",
+      "sucursalId": 2,
+      "puntoVentaId": 2,
+      "ventaId": 1004,
+      "id": 2
+    },
+    {
+      "producto": "NACIONALES Y CAMARA",
+      "unidad": "BOLETO",
+      "precioUnitario": 10,
+      "cantidad": "3",
+      "sucursalId": 2,
+      "puntoVentaId": 2,
+      "ventaId": 1004,
+      "id": 3
+    },
+    {
+      "producto": "AQSU DE PARED ",
+      "unidad": "74 x 54 cm",
+      "precioUnitario": 780,
+      "cantidad": "1",
+      "sucursalId": 3,
+      "puntoVentaId": 4,
+      "ventaId": 1005,
+      "id": 4
+    },
+    {
+      "producto": "MANILLAS TEJIDAS",
+      "unidad": "DELGADOS",
+      "precioUnitario": 15,
+      "cantidad": "3",
+      "sucursalId": 3,
+      "puntoVentaId": 4,
+      "ventaId": 1005,
+      "id": 5
     }
   ]
 }

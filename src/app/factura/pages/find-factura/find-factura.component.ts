@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { TVenta } from 'src/app/interfaces/interfaces';
 import { NavegarService } from 'src/app/navegar/services/navegar.service';
 import { VentasService } from '../../services/ventas.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-find-factura',
@@ -21,7 +22,8 @@ export class FindFacturaComponent implements OnInit {
   por:string[1]=''; //radio butin
 
   constructor(private navegarservice:NavegarService,
-              private ventasService: VentasService) { }
+              private ventasService: VentasService,
+              private router: Router) { }
 
   ngOnInit(): void {
     this.ultimos15();
@@ -65,6 +67,12 @@ export class FindFacturaComponent implements OnInit {
   ultimos15(){
     this.ventasService.utimos15()
       .subscribe( vts => this.ventasItems = vts );
+  }
+
+  verdetalle(idV:number){
+    console.log('ID VENTA FIND FACTURA',idV);
+    this.ventasService.sidVenta(idV);
+    this.router.navigate([`./factura/verdetalle`]);
   }
 
 }

@@ -21,7 +21,7 @@ export class PuntoVentaComponent implements OnInit {
   ngOnInit(): void {
     this.activatedroute.params
       .pipe(
-        switchMap(({ ids }) => this.navegarServices.allPuntoVentas( ids ) )
+        switchMap(({ ids }) => this.navegarServices.allPuntoVentas(ids))
       )
       .subscribe(pVentas => this.pdvItems = pVentas)
   }
@@ -31,7 +31,7 @@ export class PuntoVentaComponent implements OnInit {
     const ob:string[]=[
       this.pdvItems[idp].id+'',
       this.pdvItems[idp].codigoPuntoVenta+'',
-      this.pdvItems[idp].nombrePuntoVenta+' (PUNTO -'+this.pdvItems[idp].codigoPuntoVenta+')'
+      this.pdvItems[idp].nombrePuntoVenta+' (PUNTO - '+this.pdvItems[idp].codigoPuntoVenta+')'
     ];
     
     //console.log(this.pdvItems[idp]);
