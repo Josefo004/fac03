@@ -9299,6 +9299,24 @@
       "nroDocumento": "5555",
       "estado": true,
       "puntoVentaId": 4
+    },
+    {
+      "id": 1006,
+      "razonSocial": "SRL",
+      "fechHora": "2022-08-08T13:22:15.238Z",
+      "monto": 1090,
+      "nroDocumento": "7777",
+      "estado": false,
+      "puntoVentaId": 6
+    },
+    {
+      "id": 1007,
+      "razonSocial": "JOSEFO2",
+      "fechHora": "2022-08-09T18:52:03.270Z",
+      "monto": 50,
+      "nroDocumento": "99999",
+      "estado": false,
+      "puntoVentaId": 2
     }
   ],
   "razonSocial": [
@@ -15361,6 +15379,18 @@
       "nroDocumento": "5555",
       "tipoDoc": "PASAPORTE",
       "id": 1010
+    },
+    {
+      "razonSocial": "SRL",
+      "nroDocumento": "7777",
+      "tipoDoc": "CEDULA",
+      "id": 1011
+    },
+    {
+      "razonSocial": "JOSEFO2",
+      "nroDocumento": "99999",
+      "tipoDoc": "PASAPORTE",
+      "id": 1012
     }
   ],
   "productos": [
@@ -16454,6 +16484,46 @@
       "puntoVentaId": 4,
       "ventaId": 1005,
       "id": 5
+    },
+    {
+      "producto": "COSECHA DE TRIGO",
+      "unidad": "HECTAREA",
+      "precioUnitario": 500,
+      "cantidad": "2",
+      "sucursalId": 4,
+      "puntoVentaId": 6,
+      "ventaId": 1006,
+      "id": 6
+    },
+    {
+      "producto": "SERVICIO DE SEMBRADORA CON ABONADORA",
+      "unidad": "HECTAREA",
+      "precioUnitario": 30,
+      "cantidad": "3",
+      "sucursalId": 4,
+      "puntoVentaId": 6,
+      "ventaId": 1006,
+      "id": 7
+    },
+    {
+      "producto": "EXTRANJEROS",
+      "unidad": "BOLETO",
+      "precioUnitario": 20,
+      "cantidad": "1",
+      "sucursalId": 2,
+      "puntoVentaId": 2,
+      "ventaId": 1007,
+      "id": 8
+    },
+    {
+      "producto": "NACIONALES Y CAMARA",
+      "unidad": "BOLETO",
+      "precioUnitario": 10,
+      "cantidad": "3",
+      "sucursalId": 2,
+      "puntoVentaId": 2,
+      "ventaId": 1007,
+      "id": 9
     }
   ]
 }

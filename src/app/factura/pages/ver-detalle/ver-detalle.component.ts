@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import jsPDF from 'jspdf';
+
 import { TProductoV, TVenta } from 'src/app/interfaces/interfaces';
 import { DetalleVentaService } from '../../services/detalle-venta.service';
 import { VentasService } from '../../services/ventas.service';
-import { switchMap } from 'rxjs';
 import { NavegarService } from '../../../navegar/services/navegar.service';
 
 @Component({
@@ -57,6 +58,44 @@ export class VerDetalleComponent implements OnInit {
     for (let i = 0; i < k; i++) {
       this.totalV+=this.detalleVenta[i].cantidad*this.detalleVenta[i].precioUnitario;
     }
+  }
+
+  public descargaPDF():void{
+    const doc = new jsPDF({
+      orientation: 'portrait',
+      unit: 'cm'
+    });
+    
+    doc.text('Hola ZKT!!!',20,20);
+    doc.save('hi.pdf');
+
+    function createHeaders(keys:any[]) {
+      var result = [];
+      for (var i = 0; i < keys.length; i += 1) {
+        result.push({
+          id: keys[i],
+          name: keys[i],
+          prompt: keys[i],
+          width: 65,
+          align: "center",
+          padding: 0
+        });
+      }
+      return result;
+    }
+
+    var headers = createHeaders([
+      "id",
+      "coin",
+      "game_group",
+      "game_name",
+      "game_version",
+      "machine",
+      "vlt"
+    ]);
+
+    doc.table(10,30,{}, headers, {autoSize:true});
+   
   }
 
 }
