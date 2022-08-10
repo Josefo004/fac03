@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import jsPDF from 'jspdf';
+import 'jspdf-autotable';
 
 import { TProductoV, TVenta } from 'src/app/interfaces/interfaces';
 import { DetalleVentaService } from '../../services/detalle-venta.service';
@@ -60,41 +61,71 @@ export class VerDetalleComponent implements OnInit {
     }
   }
 
+  header = [['ID', 'Name', 'Email', 'Profile']]
+
+  tableData = [
+    [1, 'John', 'john@yahoo.com', 'HR'],
+    [2, 'Angel', 'angel@yahoo.com angel@yahoo.com angel@yahoo.com angel@yahoo.com angel@yahoo.com angel@yahoo.com angel@yahoo.com angel@yahoo.com', 'Marketing'],
+    [3, 'Harry', 'harry@yahoo.com', 'Finance'],
+    [4, 'Anne', 'anne@yahoo.com', 'Sales'],
+    [5, 'Hardy', 'hardy@yahoo.com', 'IT'],
+    [6, 'Nikole', 'nikole@yahoo.com', 'Admin'],
+    [7, 'Sandra', 'Sandra@yahoo.com', 'Sales'],
+    [8, 'Lil', 'lil@yahoo.com', 'Sales'],
+    [1, 'John', 'john@yahoo.com', 'HR'],
+    [2, 'Angel', 'angel@yahoo.com', 'Marketing'],
+    [3, 'Harry', 'harry@yahoo.com', 'Finance'],
+    [4, 'Anne', 'anne@yahoo.com', 'Sales'],
+    [5, 'Hardy', 'hardy@yahoo.com', 'IT'],
+    [6, 'Nikole', 'nikole@yahoo.com', 'Admin'],
+    [7, 'Sandra', 'Sandra@yahoo.com', 'Sales'],
+    [8, 'Lil', 'lil@yahoo.com', 'Sales'],
+    [1, 'John', 'john@yahoo.com', 'HR'],
+    [2, 'Angel', 'angel@yahoo.com', 'Marketing'],
+    [3, 'Harry', 'harry@yahoo.com', 'Finance'],
+    [4, 'Anne', 'anne@yahoo.com', 'Sales'],
+    [5, 'Hardy', 'hardy@yahoo.com', 'IT'],
+    [6, 'Nikole', 'nikole@yahoo.com', 'Admin'],
+    [7, 'Sandra', 'Sandra@yahoo.com', 'Sales'],
+    [8, 'Lil', 'lil@yahoo.com', 'Sales'],
+    [1, 'John', 'john@yahoo.com', 'HR'],
+    [2, 'Angel', 'angel@yahoo.com', 'Marketing'],
+    [3, 'Harry', 'harry@yahoo.com', 'Finance'],
+    [4, 'Anne', 'anne@yahoo.com', 'Sales'],
+    [5, 'Hardy', 'hardy@yahoo.com', 'IT'],
+    [6, 'Nikole', 'nikole@yahoo.com', 'Admin'],
+    [7, 'Sandra', 'Sandra@yahoo.com', 'Sales'],
+    [8, 'Lil', 'lil@yahoo.com', 'Sales'],
+    [1, 'John', 'john@yahoo.com', 'HR'],
+    [2, 'Angel', 'angel@yahoo.com', 'Marketing'],
+    [3, 'Harry', 'harry@yahoo.com', 'Finance'],
+    [4, 'Anne', 'anne@yahoo.com', 'Sales'],
+    [5, 'Hardy', 'hardy@yahoo.com', 'IT'],
+    [6, 'Nikole', 'nikole@yahoo.com', 'Admin'],
+    [7, 'Sandra', 'Sandra@yahoo.com', 'Sales'],
+    [8, 'Lil', 'lil@yahoo.com', 'Sales']
+  ]
+
   public descargaPDF():void{
-    const doc = new jsPDF({
-      orientation: 'portrait',
-      unit: 'cm'
-    });
-    
-    doc.text('Hola ZKT!!!',20,20);
-    doc.save('hi.pdf');
+    var pdf = new jsPDF();
 
-    function createHeaders(keys:any[]) {
-      var result = [];
-      for (var i = 0; i < keys.length; i += 1) {
-        result.push({
-          id: keys[i],
-          name: keys[i],
-          prompt: keys[i],
-          width: 65,
-          align: "center",
-          padding: 0
-        });
-      }
-      return result;
-    }
+    pdf.setFontSize(30);
+    pdf.text('Angular PDF Table', 1,1);
+    pdf.setFontSize(12);
+    pdf.setTextColor(99);
 
-    var headers = createHeaders([
-      "id",
-      "coin",
-      "game_group",
-      "game_name",
-      "game_version",
-      "machine",
-      "vlt"
-    ]);
 
-    doc.table(10,30,{}, headers, {autoSize:true});
+    (pdf as any).autoTable({
+    head: this.header,
+    body: this.tableData,
+    theme: 'plain'
+    })
+
+    // Open PDF document in browser's new tab
+    pdf.output('dataurlnewwindow')
+
+    // Download PDF doc  
+    //pdf.save('table.pdf');
    
   }
 
