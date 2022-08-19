@@ -9317,6 +9317,24 @@
       "nroDocumento": "99999",
       "estado": false,
       "puntoVentaId": 2
+    },
+    {
+      "id": 1008,
+      "razonSocial": "INSTITUCIÓN 1",
+      "fechHora": "2022-08-19T15:36:24.456Z",
+      "monto": 306,
+      "nroDocumento": "8888",
+      "estado": false,
+      "puntoVentaId": 1
+    },
+    {
+      "id": 1009,
+      "razonSocial": "PLANTA1",
+      "fechHora": "2022-08-19T15:38:26.688Z",
+      "monto": 40,
+      "nroDocumento": "22222",
+      "estado": true,
+      "puntoVentaId": 2
     }
   ],
   "razonSocial": [
@@ -15391,6 +15409,12 @@
       "nroDocumento": "99999",
       "tipoDoc": "PASAPORTE",
       "id": 1012
+    },
+    {
+      "razonSocial": "INSTITUCIÓN 1",
+      "nroDocumento": "8888",
+      "tipoDoc": "NIT",
+      "id": 1013
     }
   ],
   "productos": [
@@ -16524,6 +16548,36 @@
       "puntoVentaId": 2,
       "ventaId": 1007,
       "id": 9
+    },
+    {
+      "producto": "HORTALIZAS ( ARVEJAS)",
+      "unidad": "ARROBA",
+      "precioUnitario": 30,
+      "cantidad": "1",
+      "sucursalId": 1,
+      "puntoVentaId": 1,
+      "ventaId": 1008,
+      "id": 10
+    },
+    {
+      "producto": "HORTALIZAS ( REMOLACHA)",
+      "unidad": "QUINTALES",
+      "precioUnitario": 92,
+      "cantidad": "3",
+      "sucursalId": 1,
+      "puntoVentaId": 1,
+      "ventaId": 1008,
+      "id": 11
+    },
+    {
+      "producto": "EXTRANJEROS",
+      "unidad": "BOLETO",
+      "precioUnitario": 20,
+      "cantidad": "2",
+      "sucursalId": 2,
+      "puntoVentaId": 2,
+      "ventaId": 1009,
+      "id": 12
     }
   ]
 }

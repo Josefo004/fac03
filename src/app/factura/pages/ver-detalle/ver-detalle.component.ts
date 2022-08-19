@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import jsPDF from 'jspdf';
-import 'jspdf-autotable';
+import jsPDF from 'jspdf' 
 
-import { TProductoV, TVenta } from 'src/app/interfaces/interfaces';
+import { TProductoV, TpuntoVenta, Tsucursal, TVenta } from 'src/app/interfaces/interfaces';
 import { DetalleVentaService } from '../../services/detalle-venta.service';
 import { VentasService } from '../../services/ventas.service';
 import { NavegarService } from '../../../navegar/services/navegar.service';
@@ -27,6 +26,24 @@ export class VerDetalleComponent implements OnInit {
     puntoVentaId: 0
   }
 
+  sucursalS     : Tsucursal = {
+    id: 0,
+    nroSucursal: 0,
+    nombre: '',
+    direccion: '',
+    telefono: '',
+    created_at: new Date(),
+    updated_at: new Date()
+  }
+
+  puntoVentaS : TpuntoVenta = {
+    id: 0,
+    codigoPuntoVenta: 0,
+    nombrePuntoVenta: '',
+    tipoPuntoVenta: '',
+    sucursalId: 0
+  }
+
   get titulo (){
     return this.navegarservice.titulo;
   }
@@ -44,6 +61,16 @@ export class VerDetalleComponent implements OnInit {
       .subscribe(resp => {
         this.venta = resp;
         console.log(this.venta);
+        this.navegarservice.unPunto(this.venta.puntoVentaId)
+          .subscribe(resp => {
+            this.puntoVentaS = resp;
+            console.log(this.puntoVentaS);
+            this.navegarservice.unaSucursal(this.puntoVentaS.sucursalId)
+              .subscribe(resp => {
+                this.sucursalS = resp;
+                console.log(this.sucursalS);
+              })
+          });
       });
     this.detalleVentasService.tomarDetalle(this.idVenta)
       .subscribe(resp => {
@@ -61,72 +88,103 @@ export class VerDetalleComponent implements OnInit {
     }
   }
 
-  header = [['ID', 'Name', 'Email', 'Profile']]
+  imprimir(){
+    console.log('IMPRIMIR');
+    
+    let ancho = 104;
+    let alto = 110;
+    let kk = this.detalleVenta.length
+    if (kk>1) alto = 100 + (6*kk);
+    let doc = new jsPDF ('p', 'mm', [alto, ancho]);
+    let posy = 0;
+    doc.addImage('/assets/img/escudo.png','PNG', 1, 1, 15, 15);
 
-  tableData = [
-    [1, 'John', 'john@yahoo.com', 'HR'],
-    [2, 'Angel', 'angel@yahoo.com angel@yahoo.com angel@yahoo.com angel@yahoo.com angel@yahoo.com angel@yahoo.com angel@yahoo.com angel@yahoo.com', 'Marketing'],
-    [3, 'Harry', 'harry@yahoo.com', 'Finance'],
-    [4, 'Anne', 'anne@yahoo.com', 'Sales'],
-    [5, 'Hardy', 'hardy@yahoo.com', 'IT'],
-    [6, 'Nikole', 'nikole@yahoo.com', 'Admin'],
-    [7, 'Sandra', 'Sandra@yahoo.com', 'Sales'],
-    [8, 'Lil', 'lil@yahoo.com', 'Sales'],
-    [1, 'John', 'john@yahoo.com', 'HR'],
-    [2, 'Angel', 'angel@yahoo.com', 'Marketing'],
-    [3, 'Harry', 'harry@yahoo.com', 'Finance'],
-    [4, 'Anne', 'anne@yahoo.com', 'Sales'],
-    [5, 'Hardy', 'hardy@yahoo.com', 'IT'],
-    [6, 'Nikole', 'nikole@yahoo.com', 'Admin'],
-    [7, 'Sandra', 'Sandra@yahoo.com', 'Sales'],
-    [8, 'Lil', 'lil@yahoo.com', 'Sales'],
-    [1, 'John', 'john@yahoo.com', 'HR'],
-    [2, 'Angel', 'angel@yahoo.com', 'Marketing'],
-    [3, 'Harry', 'harry@yahoo.com', 'Finance'],
-    [4, 'Anne', 'anne@yahoo.com', 'Sales'],
-    [5, 'Hardy', 'hardy@yahoo.com', 'IT'],
-    [6, 'Nikole', 'nikole@yahoo.com', 'Admin'],
-    [7, 'Sandra', 'Sandra@yahoo.com', 'Sales'],
-    [8, 'Lil', 'lil@yahoo.com', 'Sales'],
-    [1, 'John', 'john@yahoo.com', 'HR'],
-    [2, 'Angel', 'angel@yahoo.com', 'Marketing'],
-    [3, 'Harry', 'harry@yahoo.com', 'Finance'],
-    [4, 'Anne', 'anne@yahoo.com', 'Sales'],
-    [5, 'Hardy', 'hardy@yahoo.com', 'IT'],
-    [6, 'Nikole', 'nikole@yahoo.com', 'Admin'],
-    [7, 'Sandra', 'Sandra@yahoo.com', 'Sales'],
-    [8, 'Lil', 'lil@yahoo.com', 'Sales'],
-    [1, 'John', 'john@yahoo.com', 'HR'],
-    [2, 'Angel', 'angel@yahoo.com', 'Marketing'],
-    [3, 'Harry', 'harry@yahoo.com', 'Finance'],
-    [4, 'Anne', 'anne@yahoo.com', 'Sales'],
-    [5, 'Hardy', 'hardy@yahoo.com', 'IT'],
-    [6, 'Nikole', 'nikole@yahoo.com', 'Admin'],
-    [7, 'Sandra', 'Sandra@yahoo.com', 'Sales'],
-    [8, 'Lil', 'lil@yahoo.com', 'Sales']
-  ]
+    function centrarTxt(txt:string){
+      posy = posy + 3;
+      doc.setFontSize(7).setFont('courier', 'normal').text(txt, ancho/2, posy, {align: 'center'});  
+    }
 
-  public descargaPDF():void{
-    var pdf = new jsPDF();
+    function centrarTxtB(txt:string){
+      posy = posy + 3;
+      doc.setFontSize(8).setFont('courier', 'bold').text(txt, ancho/2, posy, {align: 'center'});  
+    }
 
-    pdf.setFontSize(30);
-    pdf.text('Angular PDF Table', 1,1);
-    pdf.setFontSize(12);
-    pdf.setTextColor(99);
+    function pardeText(txt1:string, txt2:string ){
+      posy = posy + 3;
+      doc.setFontSize(8).setFont('courier', 'bold').text(txt1 , 45, posy, {align:'right'});
+      doc.setFontSize(7).setFont('courier', 'normal').text(txt2, 47, posy, {align:'left'});
+    }
 
+    function sItem(dx:TProductoV){
+      let tparcial = dx.precioUnitario * dx.cantidad;
+      posy = posy + 3;
+      doc.setFontSize(8).setFont('courier', 'bold').text('00000'+dx.id+' - '+dx.producto, 5, posy, {align:'left'});
+      posy = posy + 3;
+      doc.setFontSize(7).setFont('courier', 'normal').text(dx.cantidad+' - '+dx.unidad, 10, posy, {align:'left'});
+      doc.setFontSize(7).setFont('courier', 'normal').text(dx.precioUnitario.toFixed(2)+'', 65, posy, {align:'right'});
+      doc.setFontSize(7).setFont('courier', 'normal').text(tparcial.toFixed(2)+'', 90, posy, {align:'right'});
+    }
 
-    (pdf as any).autoTable({
-    head: this.header,
-    body: this.tableData,
-    theme: 'plain'
-    })
+    function total(tt:number){
+      posy = posy + 4;
+      doc.setFontSize(9).setFont('courier', 'bold').text('TOTAL', 70, posy, {align:'left'});
+      doc.setFontSize(7).setFont('courier', 'bold').text(tt.toFixed(2), 90, posy, {align:'right'});
+    }
 
-    // Open PDF document in browser's new tab
-    pdf.output('dataurlnewwindow')
+    function lineaDash(){
+      posy = posy + 2;
+      doc.setLineDashPattern([2,1],1);
+      doc.line(4,posy,100,posy);
+      posy = posy + 1;
+    } 
 
-    // Download PDF doc  
-    //pdf.save('table.pdf');
-   
+    function linea(){
+      posy = posy + 1;
+      doc.setLineDashPattern([0,0],1);
+      doc.line(4,posy,100,posy);
+    }
+
+    doc.setFontSize(15).setFont('courier', 'bold').text('FACTURA', ancho/2, 15, {align: 'center'});
+    doc.setFontSize(8).setFont('courier', 'normal').text("(Con Derecho a Crédito Fiscal)", ancho/2,19, {align:'center'});
+    doc.setFontSize(11).setFont('courier', 'bold').text('GOBIERNO AUTONOMO DEPARTAMENTAL', ancho/2, 24, {align: 'center'});
+    doc.setFontSize(11).setFont('courier', 'bold').text('DE CHUQUISACA', ancho/2, 28, {align: 'center'});
+    posy = 29;
+    centrarTxt(this.sucursalS.nombre);
+    centrarTxt(this.puntoVentaS.nombrePuntoVenta);
+    centrarTxt(this.sucursalS.direccion);
+    lineaDash();
+
+    pardeText('NIT','175982026');
+    pardeText('No Factura', this.venta.id+'');
+    pardeText('cod. Autorización','ASHKJDHYER213482762345');
+    lineaDash();
+
+    pardeText('Nombre/Razón Social', this.venta.razonSocial);
+    pardeText('NIT/CI/CEX', this.venta.nroDocumento);
+    pardeText('Cod Cliente', this.puntoVentaS.codigoPuntoVenta+''); //revisar
+    pardeText('Fecha', this.venta.fechHora+'');
+    lineaDash();
+
+    posy = posy + 5;
+    doc.setFontSize(12).setFont('courier', 'bold').text('DETALLE', ancho/2, posy, {align: 'center'});
+    posy = posy + 3;
+    doc.setFontSize(9).setFont('courier', 'bold').text('CANTIDAD', 10, posy, {align:'left'});
+    doc.setFontSize(9).setFont('courier', 'bold').text('PRECIO UNITARIO', 65, posy, {align:'right'});
+    doc.setFontSize(9).setFont('courier', 'bold').text('SUB TOTAL', 90, posy, {align:'right'});
+    linea();
+    let k = this.detalleVenta.length;
+    for (let i = 0; i < k; i++) 
+      sItem(this.detalleVenta[i]);
+    linea();
+
+    total(this.totalV);
+
+    posy = posy + 4;
+    //doc.setFontSize(9).setFont('courier', 'bold').text(posy+'', 90, posy, {align:'right'});
+
+    doc.output('dataurlnewwindow');
+
   }
 
+ 
 }

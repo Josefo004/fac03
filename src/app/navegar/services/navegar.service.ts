@@ -7,8 +7,8 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root'
 })
 export class NavegarService {
-  private _sucursalN   : string[]=[];
-  private _puntoVentaN : string[]=[];
+  private _sucursalN    : string[]=[];
+  private _puntoVentaN  : string[]=[];
   private _showMenuN    : boolean = false;
 
   private _titulo!: string;
@@ -33,6 +33,16 @@ export class NavegarService {
   allPuntoVentas(idS: number){
     const urlPuntoVenta = `${this.apiUrl}/puntoVentas?sucursalId=${idS}`;
     return this.http.get<TpuntoVenta[]>(urlPuntoVenta);
+  }
+
+  unaSucursal(idS: number){
+    const urlSucursal = `${this.apiUrl}/sucursales/${idS}`;
+    return this.http.get<Tsucursal>(urlSucursal);
+  }
+
+  unPunto(idP:number){
+    const urlPuntoVenta = `${this.apiUrl}/puntoVentas/${idP}`;
+    return this.http.get<TpuntoVenta>(urlPuntoVenta);
   }
   
   limpiarS(){this._sucursalN=[];}

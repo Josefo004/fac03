@@ -11,7 +11,7 @@ export class VentasService {
 
   private apiUrl     : string = environment.apiUrl;
   private _idVenta   : number = 1;
-
+  
   get puntoVenta(){
     return this.navegarService.puntoVentaN;
   }

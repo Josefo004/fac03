@@ -6,7 +6,6 @@ import { UsuarioComponent } from './usuario/usuario.component';
 import { RolesComponent } from './roles/roles.component';
 import { PermisosComponent } from './permisos/permisos.component';
 import { RegisterComponent } from './register/register.component';
-import { NgSelectModule } from '@ng-select/ng-select';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
@@ -21,7 +20,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     CommonModule,
     AdmuserRoutingModule,
     ReactiveFormsModule,
-    NgSelectModule,
     FormsModule
   ]
 })
