@@ -1,6 +1,7 @@
 export interface TLogin {
-  usuario: string;
-  passwd:  string;
+  usuario : string;
+  passwd  : string;
+  sucursal: number;
 }
 
 export interface TUsuario {

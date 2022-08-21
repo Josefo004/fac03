@@ -9335,6 +9335,60 @@
       "nroDocumento": "22222",
       "estado": true,
       "puntoVentaId": 2
+    },
+    {
+      "id": 1010,
+      "razonSocial": "PLANTA1",
+      "fechHora": "2022-08-21T06:40:40.271Z",
+      "monto": 354.5,
+      "nroDocumento": "22222",
+      "estado": true,
+      "puntoVentaId": 1
+    },
+    {
+      "id": 1011,
+      "razonSocial": "SOLO 5",
+      "fechHora": "2022-08-21T07:05:13.597Z",
+      "monto": 1773,
+      "nroDocumento": "5555",
+      "estado": true,
+      "puntoVentaId": 1
+    },
+    {
+      "id": 1012,
+      "razonSocial": "PLANTA1",
+      "fechHora": "2022-08-21T17:38:42.663Z",
+      "monto": 80.25,
+      "nroDocumento": "22222",
+      "estado": true,
+      "puntoVentaId": 1
+    },
+    {
+      "id": 1013,
+      "razonSocial": "PLANTA1",
+      "fechHora": "2022-08-21T17:38:53.731Z",
+      "monto": 80.25,
+      "nroDocumento": "22222",
+      "estado": true,
+      "puntoVentaId": 1
+    },
+    {
+      "id": 1014,
+      "razonSocial": "JUAN MANUEL",
+      "fechHora": "2022-08-21T17:46:04.278Z",
+      "monto": 60,
+      "nroDocumento": "55555",
+      "estado": false,
+      "puntoVentaId": 1
+    },
+    {
+      "id": 1015,
+      "razonSocial": "PLANTA1",
+      "fechHora": "2022-08-21T17:52:44.874Z",
+      "monto": 60,
+      "nroDocumento": "22222",
+      "estado": false,
+      "puntoVentaId": 1
     }
   ],
   "razonSocial": [
@@ -15415,6 +15469,12 @@
       "nroDocumento": "8888",
       "tipoDoc": "NIT",
       "id": 1013
+    },
+    {
+      "razonSocial": "JUAN MANUEL",
+      "nroDocumento": "55555",
+      "tipoDoc": "CEDULA",
+      "id": 1014
     }
   ],
   "productos": [
@@ -16578,6 +16638,126 @@
       "puntoVentaId": 2,
       "ventaId": 1009,
       "id": 12
+    },
+    {
+      "producto": "LECHE DE VACA (LECHE DE VACA PURA)",
+      "unidad": "LITROS",
+      "precioUnitario": 3.5,
+      "cantidad": "15",
+      "sucursalId": 1,
+      "puntoVentaId": 1,
+      "ventaId": 1010,
+      "id": 13
+    },
+    {
+      "producto": "HORTALIZAS ( REMOLACHA)",
+      "unidad": "QUINTALES",
+      "precioUnitario": 92,
+      "cantidad": "2",
+      "sucursalId": 1,
+      "puntoVentaId": 1,
+      "ventaId": 1010,
+      "id": 14
+    },
+    {
+      "producto": "MIEL ( MIEL DE ABEJA)",
+      "unidad": "KILOGRAMOS",
+      "precioUnitario": 26,
+      "cantidad": "1",
+      "sucursalId": 1,
+      "puntoVentaId": 1,
+      "ventaId": 1010,
+      "id": 15
+    },
+    {
+      "producto": "HORTALIZAS ( ZANAHORIA)",
+      "unidad": "QUINTALES",
+      "precioUnitario": 92,
+      "cantidad": "1",
+      "sucursalId": 1,
+      "puntoVentaId": 1,
+      "ventaId": 1010,
+      "id": 16
+    },
+    {
+      "producto": "LECHE DE VACA (LECHE DE VACA PURA)",
+      "unidad": "LITROS",
+      "precioUnitario": 3.5,
+      "cantidad": "78",
+      "sucursalId": 1,
+      "puntoVentaId": 1,
+      "ventaId": 1011,
+      "id": 17
+    },
+    {
+      "producto": "HORTALIZAS ( ARVEJAS)",
+      "unidad": "ARROBA",
+      "precioUnitario": 30,
+      "cantidad": "50",
+      "sucursalId": 1,
+      "puntoVentaId": 1,
+      "ventaId": 1011,
+      "id": 18
+    },
+    {
+      "producto": "HORTALIZAS ( ARVEJAS)",
+      "unidad": "ARROBA",
+      "precioUnitario": 30,
+      "cantidad": "2.5",
+      "sucursalId": 1,
+      "puntoVentaId": 1,
+      "ventaId": 1012,
+      "id": 19
+    },
+    {
+      "producto": "LECHE DE VACA (LECHE DE VACA PURA)",
+      "unidad": "LITROS",
+      "precioUnitario": 3.5,
+      "cantidad": "1.5",
+      "sucursalId": 1,
+      "puntoVentaId": 1,
+      "ventaId": 1012,
+      "id": 20
+    },
+    {
+      "producto": "HORTALIZAS ( ARVEJAS)",
+      "unidad": "ARROBA",
+      "precioUnitario": 30,
+      "cantidad": "2.5",
+      "sucursalId": 1,
+      "puntoVentaId": 1,
+      "ventaId": 1013,
+      "id": 21
+    },
+    {
+      "producto": "LECHE DE VACA (LECHE DE VACA PURA)",
+      "unidad": "LITROS",
+      "precioUnitario": 3.5,
+      "cantidad": "1.5",
+      "sucursalId": 1,
+      "puntoVentaId": 1,
+      "ventaId": 1013,
+      "id": 22
+    },
+    {
+      "producto": "HORTALIZAS ( ARVEJAS)",
+      "unidad": "ARROBA",
+      "precioUnitario": 30,
+      "cantidad": "2",
+      "sucursalId": 1,
+      "puntoVentaId": 1,
+      "ventaId": 1014,
+      "id": 23
+    },
+    {
+      "producto": "HORTALIZAS ( ARVEJAS)",
+      "unidad": "ARROBA",
+      "precioUnitario": 30,
+      "cantidad": "2",
+      "sucursalId": 1,
+      "puntoVentaId": 1,
+      "ventaId": 1015,
+      "id": 24
     }
   ]
 }

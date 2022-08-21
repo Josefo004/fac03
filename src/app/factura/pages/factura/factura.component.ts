@@ -6,6 +6,7 @@ import { ProductosService } from '../../services/productos.service';
 import { RazonSocialService } from '../../services/razon-social.service';
 import { VentasService } from '../../services/ventas.service';
 import { DetalleVentaService } from '../../services/detalle-venta.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -65,7 +66,8 @@ export class FacturaComponent implements OnInit  {
               private razonSocialService: RazonSocialService,
               private productosService: ProductosService,
               private ventasService: VentasService,
-              private detalleVentasService: DetalleVentaService) { 
+              private detalleVentasService: DetalleVentaService,
+              private router: Router) { 
   }
   
   ngOnInit(): void {
@@ -187,18 +189,18 @@ export class FacturaComponent implements OnInit  {
       estado      : this.facturar,
       puntoVentaId: parseInt(this.navegarservice.puntoVentaN[0],10) 
     }
-    
-    this.ventasService.guardarVenta(ventaNueva)
-          .subscribe(resp => {
-            this.ventaSave = resp;
-            console.log(resp);
-            let k = this.productosVende.length;
-            for (let i = 0; i < k; i++) {
-              this.productosVende[i].ventaId = this.ventaSave.id;
-              this.detalleVentasService.guardarUnDetalle(this.productosVende[i])
-                .subscribe(resp => console.log('DETALLE VENDIDO', resp));
-            }
-          });
-  }
 
+    this.ventasService.guardarVenta(ventaNueva)
+      .subscribe(resp => {
+        this.ventaSave = resp;
+        console.log(resp);
+        let k = this.productosVende.length;
+        for (let i = 0; i < k; i++) {
+          this.productosVende[i].ventaId = this.ventaSave.id;
+          this.detalleVentasService.guardarUnDetalle(this.productosVende[i])
+            .subscribe(resp => console.log('DETALLE VENDIDO', resp));
+        }
+        this.router.navigate([`./factura`]);
+      });
+    }
 }

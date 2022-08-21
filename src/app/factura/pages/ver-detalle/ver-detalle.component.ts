@@ -5,6 +5,8 @@ import { TProductoV, TpuntoVenta, Tsucursal, TVenta } from 'src/app/interfaces/i
 import { DetalleVentaService } from '../../services/detalle-venta.service';
 import { VentasService } from '../../services/ventas.service';
 import { NavegarService } from '../../../navegar/services/navegar.service';
+import { DatePipe, formatDate } from '@angular/common';
+import { Utils } from '../../services/utils.service';
 
 @Component({
   selector: 'app-ver-detalle',
@@ -54,7 +56,8 @@ export class VerDetalleComponent implements OnInit {
 
   constructor(private ventasService: VentasService,
               private detalleVentasService: DetalleVentaService,
-              private navegarservice: NavegarService) { }
+              private navegarservice: NavegarService,
+              private utils: Utils) { }
 
   ngOnInit(): void {
     this.ventasService.buscarUnaVenta(this.idVenta)
@@ -97,7 +100,7 @@ export class VerDetalleComponent implements OnInit {
     if (kk>1) alto = 100 + (6*kk);
     let doc = new jsPDF ('p', 'mm', [alto, ancho]);
     let posy = 0;
-    doc.addImage('/assets/img/escudo.png','PNG', 1, 1, 15, 15);
+    doc.addImage('/assets/dist/img/logo_app_gadch.png','PNG', 1, 1, 15, 15);
 
     function centrarTxt(txt:string){
       posy = posy + 3;
@@ -109,7 +112,7 @@ export class VerDetalleComponent implements OnInit {
       doc.setFontSize(8).setFont('courier', 'bold').text(txt, ancho/2, posy, {align: 'center'});  
     }
 
-    function pardeText(txt1:string, txt2:string ){
+    function pardeText(txt1:string, txt2:string){
       posy = posy + 3;
       doc.setFontSize(8).setFont('courier', 'bold').text(txt1 , 45, posy, {align:'right'});
       doc.setFontSize(7).setFont('courier', 'normal').text(txt2, 47, posy, {align:'left'});
@@ -127,7 +130,7 @@ export class VerDetalleComponent implements OnInit {
 
     function total(tt:number){
       posy = posy + 4;
-      doc.setFontSize(9).setFont('courier', 'bold').text('TOTAL', 70, posy, {align:'left'});
+      doc.setFontSize(9).setFont('courier', 'bold').text('TOTAL', 63, posy, {align:'left'});
       doc.setFontSize(7).setFont('courier', 'bold').text(tt.toFixed(2), 90, posy, {align:'right'});
     }
 
@@ -162,15 +165,19 @@ export class VerDetalleComponent implements OnInit {
     pardeText('Nombre/Razón Social', this.venta.razonSocial);
     pardeText('NIT/CI/CEX', this.venta.nroDocumento);
     pardeText('Cod Cliente', this.puntoVentaS.codigoPuntoVenta+''); //revisar
-    pardeText('Fecha', this.venta.fechHora+'');
+    const datepipe: DatePipe = new DatePipe('en-US');
+    let formattedDate = datepipe.transform(this.venta.fechHora, 'dd-MM-YYYY HH:mm:ss'); 
+    if (formattedDate!=null) {
+      pardeText('Fecha - Hora', formattedDate);
+    }
     lineaDash();
 
     posy = posy + 5;
     doc.setFontSize(12).setFont('courier', 'bold').text('DETALLE', ancho/2, posy, {align: 'center'});
     posy = posy + 3;
-    doc.setFontSize(9).setFont('courier', 'bold').text('CANTIDAD', 10, posy, {align:'left'});
-    doc.setFontSize(9).setFont('courier', 'bold').text('PRECIO UNITARIO', 65, posy, {align:'right'});
-    doc.setFontSize(9).setFont('courier', 'bold').text('SUB TOTAL', 90, posy, {align:'right'});
+    doc.setFontSize(8).setFont('courier', 'bold').text('CANTIDAD', 10, posy, {align:'left'});
+    doc.setFontSize(8).setFont('courier', 'bold').text('PRECIO UNITARIO', 65, posy, {align:'right'});
+    doc.setFontSize(8).setFont('courier', 'bold').text('SUB TOTAL', 90, posy, {align:'right'});
     linea();
     let k = this.detalleVenta.length;
     for (let i = 0; i < k; i++) 
@@ -179,8 +186,10 @@ export class VerDetalleComponent implements OnInit {
 
     total(this.totalV);
 
+    posy = posy + 3;
+    doc.setFontSize(7).setFont('courier', 'normal').text(this.utils.numeroALetras(this.totalV) , 5, posy, {align:'left'});
+
     posy = posy + 4;
-    //doc.setFontSize(9).setFont('courier', 'bold').text(posy+'', 90, posy, {align:'right'});
 
     doc.output('dataurlnewwindow');
 
