@@ -10,10 +10,10 @@
         <p class="login-box-msg">Ingrese sus datos de Acceso</p>
         <form  (ngSubmit)="login()" [formGroup]="loginForm">
           <div class="input-group mb-3">
-            <input type="email" class="form-control" formControlName="email" placeholder="Correo electronico" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required>
+            <input type="text" class="form-control" formControlName="email" placeholder="Usuario de Sistemaa" required>
             <div class="input-group-append">
               <div class="input-group-text">
-                <span class="fas fa-envelope"></span>
+                <span class="fas fa-user"></span>
               </div>
             </div>
           </div>
@@ -27,32 +27,24 @@
           </div>
           <!-- <div class="input-group mb-3 d-none"> -->
           <div class="input-group mb-3">
-            <select class="form-control" formControlName="sucursal" placeholder="Sucursal" required>
-              <option *ngFor="let item of sucItems"
+            <select class="form-control" formControlName="sucursal" required>
+              <option *ngFor="let item of sucItems; index as i"
                 [value] = "item.id"
                 >{{ item.nombre }}
               </option>
             </select>
             <div class="input-group-append">
               <div class="input-group-text">
-                <span class="fas fa-building"></span>
+                <span class="fas fa-caret-down"></span>
               </div>
             </div>
           </div>
           <div class="row">
-            <!-- /.col -->
             <div class="col-4">
               <button type="submit" class="btn btn-primary btn-block" [disabled]="loginForm.invalid">Ingresar</button>
             </div>
-            <!-- <div>
-              <button type="button" class="btn btn-primary btn-block" (click)="login2()">Ingresar2</button>
-            </div> -->
-            <!-- /.col -->
           </div>
         </form>
-        <!-- <p class="mb-0">
-          <a routerLink="/auth/register" class="text-center">Registrarse</a>
-        </p> -->
       </div>
       <div *ngIf="hayError">
         <div class="alert alert-warning alert-dismissible fade show" role="alert">
@@ -62,6 +54,11 @@
           </button>
         </div>
       </div>
+      <!-- <div class="row">
+        <div class="col-4">
+          <button (click)="julio()">Hacer</button>
+        </div>
+      </div> -->
       <!-- /.login-card-body -->
     </div>
   </div>

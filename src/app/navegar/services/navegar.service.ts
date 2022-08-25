@@ -22,6 +22,8 @@ export class NavegarService {
   }
 
   private apiUrl : string = environment.apiUrl;
+  private urlJulito : string = environment.apiJulito;
+  
 
   constructor(private http: HttpClient) { }
   
@@ -43,6 +45,16 @@ export class NavegarService {
   unPunto(idP:number){
     const urlPuntoVenta = `${this.apiUrl}/puntoVentas/${idP}`;
     return this.http.get<TpuntoVenta>(urlPuntoVenta);
+  }
+
+  julito(){
+    const bu:{}={
+      "by": "ci",
+      "q": "3659537"
+    }
+    const urlJulio = `${this.urlJulito}`;
+    return this.http.post(urlJulio,bu);
+    //return this.http.get(urlJulio + '/?criteria='+ encodeURIComponent( JSON.stringify(criteria) ));
   }
   
   limpiarS(){this._sucursalN=[];}

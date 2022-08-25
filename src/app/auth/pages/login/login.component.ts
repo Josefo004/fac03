@@ -18,9 +18,9 @@ export class LoginComponent implements OnInit {
   unaSucursal!: Tsucursal;
 
   loginForm = this.fb.group({
-    email: ['juanco@gamail.com', [Validators.required, Validators.email]],
+    email: ['juan.carrasco', [Validators.required]],
     password: ['111111',[Validators.required]],
-    sucursal: [0,[Validators.required]],
+    sucursal: [0],
     remember:[false]
   });
 
@@ -81,6 +81,11 @@ export class LoginComponent implements OnInit {
       e=>console.log('ERROR',e.error_description)
       );
 
+  }
+
+  julio(){
+    this.navegarService.julito()
+      .subscribe(resp => console.log(resp));
   }
 
 }

@@ -135,7 +135,7 @@
     },
     {
       "id": 1,
-      "usuario": "mendoza@gmail.com",
+      "usuario": "jose.mendoza",
       "password": "123",
       "nombre": "José Mendoza Vargas",
       "nivel": 1
@@ -177,7 +177,7 @@
     },
     {
       "id": 12,
-      "usuario": "juanco@gamail.com",
+      "usuario": "juan.carrasco",
       "password": "111111",
       "nombre": "juan jose carrasco",
       "nivel": 1
@@ -9389,6 +9389,15 @@
       "nroDocumento": "22222",
       "estado": false,
       "puntoVentaId": 1
+    },
+    {
+      "id": 1016,
+      "razonSocial": "JULIO JALLAZA",
+      "fechHora": "2022-08-23T14:03:08.941Z",
+      "monto": 22.5,
+      "nroDocumento": "1234567",
+      "estado": true,
+      "puntoVentaId": 7
     }
   ],
   "razonSocial": [
@@ -15475,6 +15484,12 @@
       "nroDocumento": "55555",
       "tipoDoc": "CEDULA",
       "id": 1014
+    },
+    {
+      "razonSocial": "JULIO JALLAZA",
+      "nroDocumento": "1234567",
+      "tipoDoc": "CEDULA",
+      "id": 1015
     }
   ],
   "productos": [
@@ -16758,6 +16773,26 @@
       "puntoVentaId": 1,
       "ventaId": 1015,
       "id": 24
+    },
+    {
+      "producto": "PARQUEO AUTOS",
+      "unidad": "LUGAR",
+      "precioUnitario": 5,
+      "cantidad": "3",
+      "sucursalId": 4,
+      "puntoVentaId": 7,
+      "ventaId": 1016,
+      "id": 25
+    },
+    {
+      "producto": "PARQUEO MOTOS",
+      "unidad": "LUGAR",
+      "precioUnitario": 2.5,
+      "cantidad": "3",
+      "sucursalId": 4,
+      "puntoVentaId": 7,
+      "ventaId": 1016,
+      "id": 26
     }
   ]
 }
