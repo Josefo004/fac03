@@ -9398,6 +9398,60 @@
       "nroDocumento": "1234567",
       "estado": true,
       "puntoVentaId": 7
+    },
+    {
+      "id": 1017,
+      "razonSocial": "PLANTA1",
+      "fechHora": "2022-08-26T13:29:38.192Z",
+      "monto": 100,
+      "nroDocumento": "22222",
+      "estado": false,
+      "puntoVentaId": 7
+    },
+    {
+      "id": 1018,
+      "razonSocial": "PLANTA1",
+      "fechHora": "2022-08-26T13:32:10.024Z",
+      "monto": 50,
+      "nroDocumento": "22222",
+      "estado": false,
+      "puntoVentaId": 7
+    },
+    {
+      "id": 1019,
+      "razonSocial": "RENE MARTINEZ",
+      "fechHora": "2022-08-26T14:16:00.950Z",
+      "monto": 30,
+      "nroDocumento": "897867",
+      "estado": false,
+      "puntoVentaId": 2
+    },
+    {
+      "id": 1020,
+      "razonSocial": "RENE MARTINEZ",
+      "fechHora": "2022-08-26T14:25:39.614Z",
+      "monto": 10,
+      "nroDocumento": "897867",
+      "estado": false,
+      "puntoVentaId": 2
+    },
+    {
+      "id": 1021,
+      "razonSocial": "",
+      "fechHora": "2022-08-26T14:35:02.661Z",
+      "monto": 539,
+      "nroDocumento": "",
+      "estado": false,
+      "puntoVentaId": 6
+    },
+    {
+      "id": 1022,
+      "razonSocial": "JULIO JALLAZA",
+      "fechHora": "2022-08-26T19:45:51.884Z",
+      "monto": 92.67999999999998,
+      "nroDocumento": "1234567",
+      "estado": false,
+      "puntoVentaId": 2
     }
   ],
   "razonSocial": [
@@ -15490,6 +15544,60 @@
       "nroDocumento": "1234567",
       "tipoDoc": "CEDULA",
       "id": 1015
+    },
+    {
+      "razonSocial": "11111",
+      "nroDocumento": "palanca",
+      "tipoDoc": "NIT",
+      "id": 1016
+    },
+    {
+      "razonSocial": "JUAN PEREZ",
+      "nroDocumento": "99999",
+      "tipoDoc": "NIT",
+      "id": 1017
+    },
+    {
+      "razonSocial": "JUAN PEREZ",
+      "nroDocumento": "99999",
+      "tipoDoc": "NIT",
+      "id": 1018
+    },
+    {
+      "razonSocial": "JUAN JOSE ALTAMIRANO",
+      "nroDocumento": "789654",
+      "tipoDoc": "CEDULA",
+      "id": 1019
+    },
+    {
+      "razonSocial": "JUAN JOSE ALTAMIRANO",
+      "nroDocumento": "789654",
+      "tipoDoc": "CEDULA",
+      "id": 1020
+    },
+    {
+      "razonSocial": "PAMELA CORREA",
+      "nroDocumento": "963258",
+      "tipoDoc": "CEDULA",
+      "id": 1021
+    },
+    {
+      "razonSocial": "ASD",
+      "nroDocumento": "123123",
+      "tipoDoc": "NIT",
+      "id": 1022
+    },
+    {
+      "razonSocial": "MARIBEL GUARDIA",
+      "nroDocumento": "741258",
+      "tipoDoc": "CEDULA",
+      "id": 1023
+    },
+    {
+      "razonSocial": "RENE MARTINEZ",
+      "nroDocumento": "897867",
+      "tipoDoc": "CEDULA",
+      "id": 1024
     }
   ],
   "productos": [
@@ -16793,6 +16901,106 @@
       "puntoVentaId": 7,
       "ventaId": 1016,
       "id": 26
+    },
+    {
+      "producto": "PARQUEO AUTOS",
+      "unidad": "LUGAR",
+      "precioUnitario": 5,
+      "cantidad": "20",
+      "sucursalId": 4,
+      "puntoVentaId": 7,
+      "ventaId": 1017,
+      "id": 27
+    },
+    {
+      "producto": "PARQUEO MOTOS",
+      "unidad": "LUGAR",
+      "precioUnitario": 2.5,
+      "cantidad": "20",
+      "sucursalId": 4,
+      "puntoVentaId": 7,
+      "ventaId": 1018,
+      "id": 28
+    },
+    {
+      "producto": "NACIONALES Y CAMARA",
+      "unidad": "BOLETO",
+      "precioUnitario": 10,
+      "cantidad": "2",
+      "sucursalId": 2,
+      "puntoVentaId": 2,
+      "ventaId": 1019,
+      "id": 29
+    },
+    {
+      "producto": "NIÑOS ",
+      "unidad": "BOLETO",
+      "precioUnitario": 5,
+      "cantidad": "02",
+      "sucursalId": 2,
+      "puntoVentaId": 2,
+      "ventaId": 1019,
+      "id": 30
+    },
+    {
+      "producto": "NACIONALES Y CAMARA",
+      "unidad": "BOLETO",
+      "precioUnitario": 10,
+      "cantidad": "1",
+      "sucursalId": 2,
+      "puntoVentaId": 2,
+      "ventaId": 1020,
+      "id": 31
+    },
+    {
+      "producto": "COSECHA DE TRIGO",
+      "unidad": "HECTAREA",
+      "precioUnitario": 500,
+      "cantidad": "1",
+      "sucursalId": 4,
+      "puntoVentaId": 6,
+      "ventaId": 1021,
+      "id": 32
+    },
+    {
+      "producto": "VENTA DE TORETES DESCARTES POR CARACTERISTICAS FENOTIPICAS NO DESEABLES PARA LA MULTIPLICACION(DESCARTES POR ELECCION)",
+      "unidad": "UNIDAD",
+      "precioUnitario": 6.5,
+      "cantidad": "6",
+      "sucursalId": 4,
+      "puntoVentaId": 6,
+      "ventaId": 1021,
+      "id": 33
+    },
+    {
+      "producto": "EXTRANJEROS",
+      "unidad": "BOLETO",
+      "precioUnitario": 1.4,
+      "cantidad": "2",
+      "sucursalId": 2,
+      "puntoVentaId": 2,
+      "ventaId": 1022,
+      "id": 34
+    },
+    {
+      "producto": "NIÑOS ",
+      "unidad": "BOLETO",
+      "precioUnitario": 5.6,
+      "cantidad": "12",
+      "sucursalId": 2,
+      "puntoVentaId": 2,
+      "ventaId": 1022,
+      "id": 35
+    },
+    {
+      "producto": "NACIONALES Y CAMARA",
+      "unidad": "BOLETO",
+      "precioUnitario": 7.56,
+      "cantidad": "3",
+      "sucursalId": 2,
+      "puntoVentaId": 2,
+      "ventaId": 1022,
+      "id": 36
     }
   ]
 }

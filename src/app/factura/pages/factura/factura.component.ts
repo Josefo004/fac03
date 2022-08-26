@@ -25,6 +25,7 @@ export class FacturaComponent implements OnInit  {
   @ViewChild('auto') auto!:AutocompleteComponent;
 
   rsnameM        : string='';
+  emilio         : string='';
   nroDocumentoM  : string='';
   tipoDocM       : string='';
   productos!     : TProducto[];
@@ -94,9 +95,10 @@ export class FacturaComponent implements OnInit  {
   }
 
   llamaramodal(){
-    this.rsnameM='';
-    this.nroDocumentoM=''; 
-    this.tipoDocM=''
+    this.rsnameM ='';
+    this.nroDocumentoM = ''; 
+    this.tipoDocM = ''
+    this.emilio = '';
   }
 
   //guarda la nueva razon social con datos de la ventana modal
@@ -148,7 +150,7 @@ export class FacturaComponent implements OnInit  {
     let unProducto:TProductoV={
       producto       : this.productoSelect.producto,
       unidad         : this.productoSelect.unidad,
-      precioUnitario : this.productoSelect.precioUnitario,
+      precioUnitario : Number(this.precioUP),
       cantidad       : this.cantidadP,
       sucursalId     : this.productoSelect.sucursalId,
       puntoVentaId   : this.productoSelect.puntoVentaId,
@@ -203,4 +205,8 @@ export class FacturaComponent implements OnInit  {
         this.router.navigate([`./factura`]);
       });
     }
+
+  hola(){
+    this.termino='JOSE';
+  }
 }

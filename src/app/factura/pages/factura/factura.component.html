@@ -4,7 +4,7 @@
       <div class="col-md-3">
         <label for="termino">No de Documento</label>
         <app-input
-          [terminoIn]="termino"
+          [terminoIn]="razonSocial.nroDocumento"
           (onEnter)="buscarRazonSocial( $event )"
           >
         </app-input>
@@ -129,10 +129,10 @@
       </div>
       <div class="modal-body">
         <section>
+          
           <div class="row mb-12">
             <div class="col-6">
               <label for="razonSocial">Razon Social</label>
-              
                 <input 
                   type="text" 
                   name="rsnameM"
@@ -152,12 +152,29 @@
             </div>
             <div class="col-2">
               <label for="razonSocial">Tipo de Documento</label>
-              <select class="form-control" id="tipoDocumento" [(ngModel)]="tipoDocM">
-                <option>NIT</option>
-                <option>CEDULA</option>
-                <option>PASAPORTE</option>
-                <option>R.U.N.</option>
-              </select>
+              <div class="input-group">
+                <select class="form-control" id="tipoDocumento" [(ngModel)]="tipoDocM">
+                  <option>NIT</option>
+                  <option>CEDULA</option>
+                  <option>PASAPORTE</option>
+                  <option>R.U.N.</option>
+                </select>
+                <div class="input-group-append">
+                  <div class="input-group-text">
+                    <span class="fas fa-caret-down"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row mb-12">
+            <div class="col-6 pt-3">
+              <label for="razonSocial">Correo Electronico</label>
+                <input 
+                  type="text" 
+                  name="rsnameM"
+                  class="form-control" 
+                  [(ngModel)]="emilio">
             </div>
           </div>
         </section>
