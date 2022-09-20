@@ -31,7 +31,10 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
     this.navegarService.allSucursales()
-      .subscribe( sucrs => this.sucItems = sucrs); 
+      .subscribe( sucrs => {
+        console.log(sucrs);
+        this.sucItems = sucrs
+      }); 
   }
 
   login(){
